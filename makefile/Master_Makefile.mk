@@ -113,7 +113,6 @@ setting:
 	@echo $(F_CPU)
 	@echo $(UPLOAD_RATE)
 	@echo $(MCU)
-	@echo $(TARGET)
 #---------------------------control serialscreen-----------------------------------------
 run:
 	#~ if [ ""a"`screen -list | grep $(TARGET)`" = "a" ]; then screen -S $(TARGET) $(PORT) $(BAUD); else screen -S arduino -r; fi
@@ -121,8 +120,8 @@ run:
 	#~ cat $(PORT) $(BAUD)
 	termios $(PORT) $(BAUD)
 
-kill:
-	if [ ""a"`screen -list | grep $(TARGET)`" = "a" ]; then echo already killed; else screen -S $(TARGET) -X quit; echo kill; sleep .1; fi
+#~ kill:
+	#~ if [ ""a"`screen -list | grep $(TARGET)`" = "a" ]; then echo already killed; else screen -S $(TARGET) -X quit; echo kill; sleep .1; fi
 
 #---------------------------build "low-level" targets-------------------
 .SUFFIXES: .elf .hex
@@ -152,7 +151,7 @@ $(BUILD_DIR)/core.a: $(OBJ) $(MAKEFILE)
 	@for i in $(OBJ); do echo $(AR) rcs $(BUILD_DIR)/core.a $$i; $(AR) rcs $(BUILD_DIR)/core.a $$i; done
 
 upload: $(BUILD_DIR)/$(TARGET).hex $(MAKEFILE)
-	make -f $(MAKEFILE) kill
+	#~ make -f $(MAKEFILE) kill
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)
 	make -f $(MAKEFILE) run
 
@@ -161,4 +160,4 @@ clean:
 	rm -rf $(BUILD_DIR)
 	$(REMOVE) $(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
 
-.PHONY:	all build elf hex clean run close
+.PHONY:	all build elf hex clean run
