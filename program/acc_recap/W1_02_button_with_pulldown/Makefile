@@ -7,6 +7,6 @@ MODEL = ATMega16MHz
 
 PORT ?= /dev/ttyACM*
 
-OPT = 3
+OPT = s
 
 include /home/msk/ArduinoMin/makefile/Master_Makefile.mk
