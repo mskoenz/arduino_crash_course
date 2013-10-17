@@ -1,7 +1,0 @@
-#!/bin/bash 
-
-export DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-export OLD_DIR="/home/msk/ArduinoMin"
-find ./program/  -name *.mk     | xargs perl -p -i -e 's/$ENV{OLD_DIR}/$ENV{DIR}/g'
-find ./program/  -name Makefile | xargs perl -p -i -e 's/$ENV{OLD_DIR}/$ENV{DIR}/g'
-find ./makefile/ -name *.mk     | xargs perl -p -i -e 's/$ENV{OLD_DIR}/$ENV{DIR}/g'
