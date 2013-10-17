@@ -1,0 +1,6 @@
+#!/bin/bash 
+
+export DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export OLD_DIR="/home/msk/ArduinoMin"
+perl -i -pe's/$ENV{OLD_DIR}/$ENV{DIR}/g' makefile/*
+perl -i -pe's/$ENV{OLD_DIR}/$ENV{DIR}/g' program/*
