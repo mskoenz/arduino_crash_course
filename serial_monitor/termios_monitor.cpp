@@ -46,7 +46,7 @@ public:
         std::cout << GREEN << "port " << GREENB << name << GREEN << " is open" << NONE << std::endl;
         init();
         
-        #define lazyswitch(X) else if(baud == X) {cfsetospeed(&tio, B##X);cfsetispeed(&tio, B##X);}
+        #define lazyswitch(X) else if(baud == X) {cfsetospeed(&tio, X);cfsetispeed(&tio, X);}
         
         if(0);
         lazyswitch(460800)
