@@ -27,18 +27,17 @@ Mac:
 02: compile serial_monitor/termios_monitor.cpp
 03: name the binary termios
 04: move termios to ~/bin
-05: open ~/.profile
+05: open ~/.bash_profile or if there is no ~/.bash_profile just open ~/.profile
 06: add somewhere the line:
     export PATH = /Users/your_user_name/bin:$PATH
 07: log out and in again
 08: termios should now be a valid command in the terminal
 09: run ./rename_path.sh
 10: if the avr tools aren't in /opt/local/bin
-    10.5: change the file mac_only.sh by changing the line DIR="/opt/local/bin" to the right path
-11: run ./mac_only.sh
+    10.5: change the file mac_only.sh by changing the line NEW_DIR="/opt/local/bin" to the right path
+11: if the Arduino serial port isn't something like /dev/tty.usbmodem*
+    11.5: change the file mac_only.sh by changing the line NEW_PORT="/dev/tty.usbmodem*" to the right port
+12: run ./mac_only.sh
 
-12: goto program/empty_template
-13: change the Makefile in this folder by adding the right serial port (ACM0 is for linux)
-    you can find the port via the Arduino IDE or by checking what's in /dev/tty*
-    normally it's something like /dev/tty.usb...
+13: goto program/empty_template
 14: now call make with an arduino attached and everything should work
