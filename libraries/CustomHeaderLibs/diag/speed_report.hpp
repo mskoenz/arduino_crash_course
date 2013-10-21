@@ -37,7 +37,7 @@ namespace diag {
                     
                     ustd::cout << ustd::endl;
                     ustd::cout << F("----------------------") << ustd::endl;
-                    ustd::cout << F("  Speed Report  ") << ustd::endl;
+                    ustd::cout << F("     Speed Report     ") << ustd::endl;
                     ustd::cout << F("----------------------") << ustd::endl;
                     if(f < 1)
                         ustd::cout << GREEN << F(" mean freq: ") << GREENB << f * 1000 << F(" Hz") << ustd::endl;

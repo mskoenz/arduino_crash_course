@@ -19,7 +19,6 @@
 #include <Print.h>
 #include <Arduino.h>
 
-
 namespace ustd {
     
     struct endl_class {

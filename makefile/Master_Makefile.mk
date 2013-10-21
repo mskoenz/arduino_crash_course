@@ -93,11 +93,11 @@ ADEFS = -DF_CPU=$(F_CPU)
 
 CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
-CEXTRA = -g -Wall -fno-exceptions -ffunction-sections -fdata-sections -DARDUINO=102
+CEXTRA = -g -O$(OPT) -Wall -fno-exceptions -ffunction-sections -fdata-sections -DARDUINO=102
 #~ -fno-inline-small-functions -fno-split-wide-types -mshort-calls
 
-CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) $(CSTANDARD) $(CEXTRA)
-CXXFLAGS = $(CDEFS) $(CXXINCS) -O$(OPT) $(CXXSTANDARD) $(CEXTRA)
+CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) $(CWARN) $(CSTANDARD) $(CEXTRA)
+CXXFLAGS = $(CDEFS) $(CXXINCS) $(CXXSTANDARD) $(CEXTRA)
 ASFLAGS = $(ADEFS)
 LDFLAGS = -O$(OPT) -Wl,--relax -Wl,--gc-sections -mmcu=$(MCU) -lm
 

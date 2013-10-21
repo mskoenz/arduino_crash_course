@@ -49,7 +49,7 @@ namespace diag {
     void benchmark_report(T fct, uint16_t const & n = 100) {
         ustd::cout << ustd::endl;
         ustd::cout << F("----------------------") << ustd::endl;
-        ustd::cout << F(" Benchmark Report  ") << ustd::endl;
+        ustd::cout << F("   Benchmark Report   ") << ustd::endl;
         ustd::cout << F("----------------------") << ustd::endl;
         double us = benchmark_micros(fct, n);
         if(us > 1)
@@ -57,14 +57,14 @@ namespace diag {
         else
             ustd::cout << YELLOW << F(" used time: ") << YELLOWB << us * 1000 << F(" ns") << ustd::endl;
             
-        ustd::cout << GREEN << F(" cycles  : ") << GREENB << benchmark_clocks(fct, n) << NONE << ustd::endl;
+        ustd::cout << GREEN << F(" cycles   : ") << GREENB << benchmark_clocks(fct, n) << NONE << ustd::endl;
         
         if(us > 1)
             ustd::cout << GREEN << F(" freqency : ") << GREENB << 1000/us << F(" kHz") << NONE << ustd::endl;
         else
             ustd::cout << YELLOW << F(" freqency : ") << YELLOWB << 1/us << F(" MHz") << NONE << ustd::endl;
         
-        ustd::cout << F("(running at ") << clockCyclesPerMicrosecond() << F(" MHz)") << ustd::endl;
+        ustd::cout << F(" (running at ") << clockCyclesPerMicrosecond() << F(" MHz)") << ustd::endl;
         ustd::cout << F("----------------------") << ustd::endl;
     }
 }//end namespace diag

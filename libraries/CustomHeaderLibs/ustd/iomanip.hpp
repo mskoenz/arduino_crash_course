@@ -30,7 +30,6 @@ namespace ustd {
     BUILD_FCT(setbase, uint8_t)
     
     #undef BUILD_FCT
-    
 }//end namespace ustd
 
 #endif //__IOMANIP_HEADER
