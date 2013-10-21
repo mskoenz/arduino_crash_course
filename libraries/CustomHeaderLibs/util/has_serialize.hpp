@@ -2,6 +2,12 @@
 // Date:    02.07.2013 17:20:07 EDT
 // File:    has_serialize.hpp
 
+/* This program is free software. It comes without any warranty, to
+ * the extent permitted by applicable law. You can redistribute it
+ * and/or modify it under the terms of the Do What The Fuck You Want
+ * To Public License, Version 2, as published by Sam Hocevar. See
+ * http://www.wtfpl.net/ or COPYING for more details. */
+
 #ifndef __HAS_SERIALIZE_HEADER
 #define __HAS_SERIALIZE_HEADER
 
