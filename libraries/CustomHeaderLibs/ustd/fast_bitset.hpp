@@ -11,6 +11,8 @@
 #ifndef __FAST_BITSET_HEADER
 #define __FAST_BITSET_HEADER
 
+//CAN ONLY BE USED UP TO N==64
+
 #include "ard_assert.hpp"
 #include "../util/byte_operation.hpp"
 

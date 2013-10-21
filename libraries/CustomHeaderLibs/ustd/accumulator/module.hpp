@@ -18,7 +18,7 @@ namespace ustd {
     namespace detail {
         template<typename T>
         struct requirement {
-            typedef list_end type;
+            typedef util::list_end type;
         };
     }//end namespace detail
     

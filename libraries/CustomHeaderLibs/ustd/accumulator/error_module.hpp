@@ -21,14 +21,14 @@ namespace ustd {
     namespace detail {
         template<>
         struct requirement<tag::error> {
-            typedef typename make_list<tag::count, tag::mean>::type type;
+            typedef typename util::make_list<tag::count, tag::mean>::type type;
         };
     }//end namespace detail
     
     template<typename T, typename _base>
     class module<T, tag::error, _base>: public _base {
         typedef _base base;
-        typedef typename mean_trait<T>::type error_type;
+        typedef typename util::mean_trait<T>::type error_type;
     public:
         //------------------- ctor -------------------
         module(): base(), sum2_(0) {

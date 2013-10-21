@@ -24,8 +24,8 @@ namespace ustd {
     namespace detail {
         template<typename item, typename next_item>
         struct add_dependecies_rec {
-            typedef typename concatinate_lists<typename requirement<item>::type
-                                             , typename concatinate_lists< list_item<item, list_end>
+            typedef typename util::concatinate_lists<typename requirement<item>::type
+                                             , typename util::concatinate_lists< util::list_item<item, util::list_end>
                                                                 , typename add_dependecies_rec<typename next_item::type
                                                                                             , typename next_item::next>::type
                                                                          >::type
@@ -33,10 +33,10 @@ namespace ustd {
                                          type;
         };
         template<typename item>
-        struct add_dependecies_rec<item, list_end> {
+        struct add_dependecies_rec<item, util::list_end> {
             typedef 
-                typename concatinate_lists<typename requirement<item>::type
-                                             , list_item<item, list_end>
+                typename util::concatinate_lists<typename requirement<item>::type
+                                             , util::list_item<item, util::list_end>
                                              >::type 
             type;
         };
@@ -59,7 +59,7 @@ namespace ustd {
     };
     
     template<typename T>
-    struct accumulator_deriver<T, list_end> {
+    struct accumulator_deriver<T, util::list_end> {
         typedef accumulator_base<T> type;
     };
     
@@ -76,10 +76,10 @@ namespace ustd {
             , typename T9 = void
             >
     class accumulator: public accumulator_deriver<  T
-                                                  , typename invert_list<
-                                                        typename unique_list<
+                                                  , typename util::invert_list<
+                                                        typename util::unique_list<
                                                             typename detail::add_dependecies<
-                                                                typename make_list<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>::type
+                                                                typename util::make_list<T0, T1, T2, T3, T4, T5, T6, T7, T8, T9>::type
                                                             >::type 
                                                         >::type 
                                                     >::type 

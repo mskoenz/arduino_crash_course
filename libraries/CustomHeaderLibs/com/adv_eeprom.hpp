@@ -62,13 +62,13 @@ namespace com {
             if(corrupted_ == corrupt) {
                 adjust_pos(t, oes_.pos());
                 oes_ & t;
-                oes_.write(checksum(t));
+                oes_.write(util::checksum(t));
                 init_vmv(t);
             }
             else {
                 adjust_pos(t, ies_.pos());
                 ies_ & t;
-                if(ies_.read() != checksum(t)) {
+                if(ies_.read() != util::checksum(t)) {
                     DEBUG_MSG("eeprom is corrupted! reset and fresh init incomming")
                     oes_.pos() = 0;
                     oes_.write(corrupt);
@@ -93,7 +93,7 @@ namespace com {
             version(0);
             
             oes_ & t;
-            oes_.write(checksum(t));
+            oes_.write(util::checksum(t));
             return (*this);
         }
         //------------------- read from eeprom -------------------
@@ -112,7 +112,7 @@ namespace com {
             version(0);
             
             ies_ & t;
-            ASSERT_MSG(ies_.read() == checksum(t), "cannot access uninitialized version");
+            ASSERT_MSG(ies_.read() == util::checksum(t), "cannot access uninitialized version");
             
             return (*this);
         }

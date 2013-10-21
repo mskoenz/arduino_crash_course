@@ -18,14 +18,14 @@ namespace ustd {
     namespace detail {
         template<>
         struct requirement<tag::mean> {
-            typedef typename make_list<tag::count>::type type;
+            typedef typename util::make_list<tag::count>::type type;
         };
     }//end namespace detail
     
     template<typename T, typename _base>
     class module<T, tag::mean, _base>: public _base {
         typedef _base base;
-        typedef typename mean_trait<T>::type mean_type;
+        typedef typename util::mean_trait<T>::type mean_type;
     public:
         //------------------- ctor -------------------
         module(): base(), sum_() {

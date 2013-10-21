@@ -17,7 +17,7 @@ namespace ustd {
     namespace detail {
         template<>
         struct requirement<tag::max> {
-            typedef list_end type;
+            typedef util::list_end type;
         };
     }//end namespace detail
     

@@ -18,7 +18,7 @@
 namespace ustd {
     template<typename T, unsigned PROMIL, typename _base = identity_filter<T> >
     class highpass_filter: public _base {
-        typedef typename mean_trait<T>::type mean_type;
+        typedef typename util::mean_trait<T>::type mean_type;
         typedef _base base;
     public:
         //------------------- ctors -------------------

@@ -24,14 +24,14 @@ namespace ustd {
     namespace detail {
         template<int N>
         struct requirement<tag::ema<N> > {
-            typedef list_end type;
+            typedef util::list_end type;
         };
     }//end namespace detail
     
     template<typename T, typename _base, int N>
     class module<T, tag::ema<N>, _base>: public _base {
         typedef _base base;
-        typedef typename mean_trait<T>::type mean_type;
+        typedef typename util::mean_trait<T>::type mean_type;
     public:
         //------------------- ctor -------------------
         module(): base(), sum_() { //just heuristics for now

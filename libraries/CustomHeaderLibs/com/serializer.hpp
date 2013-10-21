@@ -15,7 +15,7 @@
 //~ #define __LESS_ZERO
 
 #include "archive_enum.hpp"
-#include "../util/meta_template.hpp"
+#include "../ustd/type_traits.hpp"
 #include "../ustd/ard_assert.hpp"
 #include "../util/byte_operation.hpp"
 #include "../util/has_serialize.hpp"
@@ -87,13 +87,13 @@ namespace com {
     template<typename T, typename Archive> //has no serialize_tpl
     struct serialize_helper<T, false, Archive> {
         static void get(Archive & ar, T & t) {
-            impl_version<T, Archive, Archive::type, is_array<T>::value>().get(t, ar);
+            impl_version<T, Archive, Archive::type, ustd::is_array<T>::value>().get(t, ar);
         }
     };
 
     template<typename T, typename Archive>
     void serialize(Archive & ar, T & t) {
-        serialize_helper<T, has_serialize<T>::value, Archive>().get(ar, t);
+        serialize_helper<T, util::has_serialize<T>::value, Archive>().get(ar, t);
     }
     //------------------- endian helper for of class -------------------
     template<typename T>

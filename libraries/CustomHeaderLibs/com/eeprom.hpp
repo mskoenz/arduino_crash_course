@@ -42,12 +42,12 @@ namespace com {
             if(corrupted_ == corrupt) {
                 adjust_pos(t, oes_.pos());
                 oes_ & t;
-                oes_.write(checksum(t));
+                oes_.write(util::checksum(t));
             }
             else {
                 adjust_pos(t, ies_.pos());
                 ies_ & t;
-                if(ies_.read() != checksum(t)) {
+                if(ies_.read() != util::checksum(t)) {
                     DEBUG_MSG("eeprom is corrupted! reset and fresh init incomming")
                     oes_.pos() = 0;
                     oes_.write(corrupt);
@@ -61,7 +61,7 @@ namespace com {
         EEPROMV2_class & operator<<(T & t) {
             oes_.pos() = map_.at(adress_type(&t));
             oes_ & t;
-            oes_.write(checksum(t));
+            oes_.write(util::checksum(t));
             return (*this);
         }
         //------------------- read from eeprom -------------------

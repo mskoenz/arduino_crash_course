@@ -12,7 +12,6 @@
 #define __BITOPERATION_HEADER
 
 namespace util {
-
     namespace detail {
         typedef uint8_t byte_op_size_type;
     }
@@ -52,6 +51,5 @@ namespace util {
     inline void flip_bit(T & unit, uint8_t const & pos) {
         unit ^= (T(1) << pos);
     }
-    
 }//end namespace util
 #endif //__BITOPERATION_HEADER
