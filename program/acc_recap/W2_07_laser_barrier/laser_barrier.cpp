@@ -10,7 +10,7 @@
 
 #include <Arduino.h>
 #include <notes.hpp>
-#include <ustd.hpp>
+
 // Attach the piezo speaker to pin 13 and GND and the photoresistor to GND and A0
 // You also need a 10k resistor form VCC to A0 for the voltage devider
 // (The arduino cannot measure resistance, only voltages)
