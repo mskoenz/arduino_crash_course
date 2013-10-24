@@ -109,19 +109,13 @@ ALL_ASFLAGS = -mmcu=$(MCU) -I. -x assembler-with-cpp $(ASFLAGS)
 all: upload
 
 setting:
-	@echo $(MODEL)
-	@echo $(F_CPU)
-	@echo $(UPLOAD_RATE)
-	@echo $(MCU)
+	@echo "MODEL:   $(MODEL)"
+	@echo "F_CPU:   $(F_CPU)"
+	@echo "UL_RATE: $(UPLOAD_RATE)"
+	@echo "MCU:     $(MCU)"
 #---------------------------control serialscreen-----------------------------------------
 run:
-	#~ if [ ""a"`screen -list | grep $(TARGET)`" = "a" ]; then screen -S $(TARGET) $(PORT) $(BAUD); else screen -S arduino -r; fi
-	#~ cu -l $(PORT) -s $(BAUD)
-	#~ cat $(PORT) $(BAUD)
 	termios $(PORT) $(BAUD)
-
-#~ kill:
-	#~ if [ ""a"`screen -list | grep $(TARGET)`" = "a" ]; then echo already killed; else screen -S $(TARGET) -X quit; echo kill; sleep .1; fi
 
 #---------------------------build "low-level" targets-------------------
 .SUFFIXES: .elf .hex
