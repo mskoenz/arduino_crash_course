@@ -11,7 +11,7 @@ you need to be part of the dialout group
 Linux:
 
 01: clone/fork this repo
-02: compile serial_monitor/termios_monitor.cpp
+02: compile serial_monitor/termios_monitor_linux.cpp
 03: name the binary termios
 04: move termios to ~/bin
 05: log out and in again
@@ -24,7 +24,7 @@ Linux:
 Mac:
 
 01: clone/fork this repo
-02: compile serial_monitor/termios_monitor.cpp
+02: compile serial_monitor/termios_monitor_mac.cpp
 03: name the binary termios
 04: move termios to ~/bin
 05: open ~/.bash_profile or if there is no ~/.bash_profile just open ~/.profile

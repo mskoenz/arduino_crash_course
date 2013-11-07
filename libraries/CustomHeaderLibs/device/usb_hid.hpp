@@ -25,6 +25,8 @@ namespace device {
             data_[1] = 0;
             data_[2] = 0;
             data_[3] = 0;
+            data_[4] = 0;
+            data_.push_back(0); //mods
         }
         //------------------- connect -------------------
         void connect() {
@@ -48,35 +50,56 @@ namespace device {
         }
         //=================== press/release helper ===================
         void set_key(uint8_t const & _key) {
-            if(data_[1] == 0) {
-                data_[1] = data_[2];
-                data_[2] = data_[3];
-                data_[3] = _key;
-                return;
-            }
-            if(data_[2] == 0) {
-                data_[2] = data_[3];
-                data_[3] = _key;
-                return;
-            }
-            if(data_[3] == 0) {
-                data_[3] = _key;
-                return;
-            }
+            if(data_.size() == data_.capacity())
+                data_.erase(1);
+            data_.push_back(_key);
+            //~ if(data_[4] == 0) {
+                //~ data_[4] = _key;
+                //~ return;
+            //~ }
+            //~ if(data_[3] == 0) {
+                //~ data_[3] = data_[4];
+                //~ data_[4] = _key;
+                //~ return;
+            //~ }
+            //~ if(data_[2] == 0) {
+                //~ data_[2] = data_[3];
+                //~ data_[3] = data_[4];
+                //~ data_[4] = _key;
+                //~ return;
+            //~ }
+            //~ if(data_[1] == 0) {
+                //~ data_[1] = data_[2];
+                //~ data_[2] = data_[3];
+                //~ data_[3] = data_[4];
+                //~ data_[4] = _key;
+                //~ return;
+            //~ }
         }
         void unset_key(uint8_t const & _key) {
-            if(data_[1] == _key) {
-                data_[1] = 0;
-                return;
-            }
-            if(data_[2] == _key) {
-                data_[2] = 0;
-                return;
-            }
-            if(data_[3] == _key) {
-                data_[3] = 0;
-                return;
-            }
+            data_.erase(data_.find(_key, 1));
+            //~ if(data_[1] == _key) {
+                //~ data_[1] = 0;
+                //~ return;
+            //~ }
+            //~ if(data_[2] == _key) {
+                //~ data_[2] = data_[1];
+                //~ data_[1] = 0;
+                //~ return;
+            //~ }
+            //~ if(data_[3] == _key) {
+                //~ data_[3] = data_[2];
+                //~ data_[2] = data_[1];
+                //~ data_[1] = 0;
+                //~ return;
+            //~ }
+            //~ if(data_[4] == _key) {
+                //~ data_[4] = data_[3];
+                //~ data_[3] = data_[2];
+                //~ data_[2] = data_[1];
+                //~ data_[1] = 0;
+                //~ return;
+            //~ }
         }
         void set_mod(uint8_t const & _mod) {
             if(_mod == 0)
@@ -148,13 +171,23 @@ namespace device {
         bool any_pressed() {
             return (data_[0] + data_[1] + data_[2] + data_[3]);
         }
+        constexpr static uint8_t buffer_size() {
+            return BUFFER_SIZE;
+        }
+        void print_buffer() {
+            for(uint8_t i = 0; i < BUFFER_SIZE; ++i) {
+                ustd::cout << data_[i] << ", ";
+            }
+            ustd::cout << ustd::endl;
+        }
         //------------------- update -------------------
         void update() {
-            UsbKeyboard.sendBuffer(data_);
+            UsbKeyboard.sendBuffer(data_.data());
             UsbKeyboard.update();
         }
     private:
-        uint8_t data_[BUFFER_SIZE]; //first is mod, last three keys
+        //~ uint8_t data_[BUFFER_SIZE]; //first is mod, last three keys
+        ustd::static_vector<uint8_t, BUFFER_SIZE> data_; //first is mod, last three keys
         ustd::array<uint8_t, 4> mod_vec_;
     } ;
 }//end namespace device

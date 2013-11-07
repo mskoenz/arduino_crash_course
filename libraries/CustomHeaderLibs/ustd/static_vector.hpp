@@ -44,9 +44,9 @@ namespace ustd {
         }
         void pop_back() {
             --size_;
+            array_[size_] = 0;
         }
-        size_type find(T const & val) const {
-            size_type pos = 0;
+        size_type find(T const & val, size_type pos = 0) const {
             for(; pos < size_; ++pos) {
                 if(array_[pos] == val)
                     return pos;
@@ -54,6 +54,9 @@ namespace ustd {
             return end();
         }
         void clear() {
+            //~ for(size_type i = 0; i < size_; ++i) {
+                //~ array_[i] = 0;
+            //~ }
             size_ = 0;
         }
         void erase(size_type const & pos) {
@@ -61,7 +64,7 @@ namespace ustd {
                 for(size_type i = pos; i < size_; ++i) {
                     array_[i] = array_[i + 1];
                 }
-                --size_;
+                pop_back();
             }
         }
         //------------------- getter -------------------

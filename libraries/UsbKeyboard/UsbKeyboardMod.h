@@ -18,12 +18,10 @@
 
 typedef uint8_t byte;
 
+#define BUFFER_SIZE 6 // Minimum of 2: 1 for modifiers + 1 for keystroke 
 
-#define BUFFER_SIZE 4 // Minimum of 2: 1 for modifiers + 1 for keystroke 
 
-
-static uchar    idleRate;           // in 4 ms units 
-
+static uchar    idleRate;           // in 4 ms units
 
 /* We use a simplifed keyboard report descriptor which does not support the
  * boot protocol. We don't allow setting status LEDs and but we do allow
@@ -132,7 +130,7 @@ class UsbKeyboardDevice {
         usbSetInterrupt(reportBuffer, sizeof(reportBuffer));
     }
     //private: TODO: Make friend?
-    uchar    reportBuffer[4];    // buffer for HID reports [ 1 modifier byte + (len-1) key strokes]
+    uchar    reportBuffer[BUFFER_SIZE];    // buffer for HID reports [ 1 modifier byte + (len-1) key strokes]
 };
 
 UsbKeyboardDevice UsbKeyboard = UsbKeyboardDevice();

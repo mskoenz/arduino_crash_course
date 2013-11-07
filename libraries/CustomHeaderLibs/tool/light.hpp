@@ -25,6 +25,7 @@ namespace state {
         , slow
         , blink
         , fast
+        , very_fast
     };
 }//end namespace state
 
@@ -79,6 +80,9 @@ namespace tool {
         void fast() {
             digitalWrite(pin, (tool::clock.msec(500) < 250) == on_state);
         }
+        void very_fast() {
+            digitalWrite(pin, (tool::clock.msec(100) < 10) == on_state);
+        }
         void blink() {
             digitalWrite(pin, (tool::clock.msec(1000) < 500) == on_state);
         }
@@ -97,6 +101,7 @@ namespace tool {
             UPDATE(fast)
             UPDATE(blink)
             UPDATE(slow)
+            UPDATE(very_fast)
             ; //last else
             
             #undef UPDATE
