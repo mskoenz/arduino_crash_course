@@ -5,7 +5,6 @@
 #include <Arduino.h>
 #include <EEPROM.h> //don't forget this header
 
-
 // main idea: -read and write to the EEPROM (is like a harddrive)
 //            -EEPROM data remains even after the power is lost (no matter how long)
 //            -serialize a type that is longer then a byte
