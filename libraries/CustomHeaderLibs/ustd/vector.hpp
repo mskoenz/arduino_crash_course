@@ -14,6 +14,7 @@
 #include "ard_assert.hpp"
 
 #include "../com/archive_enum.hpp"
+#include <diag.hpp>
 
 namespace ustd {
     
@@ -111,11 +112,11 @@ namespace ustd {
             return size_;
         }
         size_type capacity() const {
-            return (*((size_type *)(int(array_) - 2))) / sizeof(T);
+            //this 'hack' makes the vector not portable, but I don't need to save the capacity => -2 bytes ;) You need to know how the memory works
+            return (*((size_type *)(size_type(array_) - 2))) / sizeof(T);
         }
         void reserve(size_type const & new_capacity) {
             if(new_capacity > capacity()) {
-                //this 'hack' makes the vector not portable, but I don't need to save the capacity => -2 bytes ;)
                 array_ = (T*)realloc(array_, new_capacity * sizeof(T));
             }
         }

@@ -1,6 +1,7 @@
 // Author:  Mario S. Könz <mskoenz@gmx.net>
 // Date:    29.05.2013 18:53:20 EDT
-// File:    bitoperation.hpp
+// File:    byte_operation.hpp
+
 
 /* This program is free software. It comes without any warranty, to
  * the extent permitted by applicable law. You can redistribute it
@@ -8,8 +9,8 @@
  * To Public License, Version 2, as published by Sam Hocevar. See
  * http://www.wtfpl.net/ or COPYING for more details. */
 
-#ifndef __BITOPERATION_HEADER
-#define __BITOPERATION_HEADER
+#ifndef __BYTE_OPERATION_HEADER
+#define __BYTE_OPERATION_HEADER
 
 namespace util {
     namespace detail {
@@ -52,4 +53,4 @@ namespace util {
         unit ^= (T(1) << pos);
     }
 }//end namespace util
-#endif //__BITOPERATION_HEADER
+#endif //__BYTE_OPERATION_HEADER

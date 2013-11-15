@@ -19,6 +19,7 @@ extern int    __data_start
             , __bss_end
             , __heap_start
             , __brkval
+            , __flp
             ;
 
 namespace diag {
@@ -28,6 +29,36 @@ namespace diag {
     int free_ram() {
         int v;
         return (int) &v - (int(__brkval) == 0 ? int(&__heap_start) : int(__brkval));
+    }
+    void print_stack() {
+        
+        int16_t freeptr = __flp;
+        int16_t pos = int16_t(&__heap_start);
+        int16_t end = int16_t(__brkval);
+        
+        ustd::cout << GREEN << "used heap: " << GREENB << end - pos << ustd::endl(2);
+        
+        uint16_t size = 0;
+        ustd::cout << ustd::setfill('0');
+        for(; pos < end; ++pos) {
+            if(size == 0) {
+                if(pos == freeptr) {
+                    ustd::cout << YELLOW;
+                    freeptr = *(uint8_t*)(pos + 2) + (*(uint8_t*)(pos + 3) << 8);
+                } else
+                    ustd::cout << NONE;
+                
+                size = *(uint8_t*)pos + (*(uint8_t*)(pos + 1) << 8);
+                ustd::cout << "size: " << ustd::setw(3) << size << "  ";
+                pos += 2;
+            }
+            ustd::cout << ustd::setw(3) << *(uint8_t*)pos << " ";
+            
+            size--;
+            if(size == 0)
+                ustd::cout << ustd::endl;
+        }
+        ustd::cout << ustd::endl(2);
     }
     int used_ram() {
         return ram_capacity() - free_ram();

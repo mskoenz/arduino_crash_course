@@ -14,14 +14,17 @@
 #include "clock.hpp"
 
 #include <Arduino.h>
+#include "../ustd/ard_assert.hpp"
+#include "../ustd/type_traits.hpp"
+#include "pin_concept.hpp"
 
 namespace state {
     enum light_enum : uint8_t {
           off
         , on
         , flash
-        , raise
-        , pwm
+        //~ , raise
+        //~ , pwm
         , slow
         , blink
         , fast
@@ -30,18 +33,21 @@ namespace state {
 }//end namespace state
 
 namespace tool {
-    template<uint8_t pin, bool on_state = HIGH>
+    template<typename pin_concept, bool on_state = HIGH>
     class light_class {
     public:
         //------------------- ctors -------------------
         light_class(): state_(state::off) {
-            pinMode(pin, OUTPUT);
-            update();
+            pin_.mode(OUTPUT);
+        }
+        template<typename T>
+        light_class(T & t): state_(state::off), pin_(t) {
+            pin_.mode(OUTPUT);
         }
         //------------------- assignment -------------------
-        template<uint8_t pin2, bool on_state2>
-        light_class & operator=(light_class<pin2, on_state2> const & rhs) {
-            state_ = rhs.state();
+        template<class pin_concept2, bool on_state2>
+        light_class & operator=(light_class<pin_concept2, on_state2> const & rhs) {
+            state_ = rhs.state_;
             return (*this);
         }
         light_class & operator=(state::light_enum const & s) {
@@ -52,42 +58,27 @@ namespace tool {
             state_ = (s ? state::on : state::off);
             return (*this);
         }
-        light_class & operator=(int const & s) {
-            state_ = state::pwm;
-            if(on_state)
-                analogWrite(pin, s);
-            else
-                analogWrite(pin, 255 - s);
-            return (*this);
-        }
         //------------------- modes -------------------
         void on() {
-            digitalWrite(pin, on_state);
+            pin_.write(on_state);
         }
         void off() {
-            digitalWrite(pin, !on_state);
+            pin_.write(!on_state);
         }
         void flash() {
-            digitalWrite(pin, (tool::clock.msec() < 100) == on_state);
-        }
-        void pwm() {
-            ASSERT_MSG(pin == 3 or pin == 5 or pin == 6 or pin == 9 or pin == 10 or pin == 11, "only PWM pins are capable of state::pwm")
-        }
-        void raise() {
-            ASSERT_MSG(pin == 3 or pin == 5 or pin == 6 or pin == 9 or pin == 10 or pin == 11, "only PWM pins are capable of state::pwm")
-            analogWrite(pin, tool::clock.msec()/6);
+            pin_.write((tool::clock.msec() < 100) == on_state);
         }
         void fast() {
-            digitalWrite(pin, (tool::clock.msec(500) < 250) == on_state);
+            pin_.write((tool::clock.msec(500) < 250) == on_state);
         }
         void very_fast() {
-            digitalWrite(pin, (tool::clock.msec(100) < 10) == on_state);
+            pin_.write((tool::clock.msec(100) < 10) == on_state);
         }
         void blink() {
-            digitalWrite(pin, (tool::clock.msec(1000) < 500) == on_state);
+            pin_.write((tool::clock.msec(1000) < 500) == on_state);
         }
         void slow() {
-            digitalWrite(pin, (tool::clock.sec() & 1) == on_state);
+            pin_.write((tool::clock.sec() & 1) == on_state);
         }
         //------------------- update -------------------
         void update() {
@@ -96,8 +87,6 @@ namespace tool {
             UPDATE(on)
             UPDATE(off)
             UPDATE(flash)
-            UPDATE(pwm)
-            UPDATE(raise)
             UPDATE(fast)
             UPDATE(blink)
             UPDATE(slow)
@@ -119,6 +108,7 @@ namespace tool {
         }
     private:
         state::light_enum state_;
+        pin_concept pin_;
     };
 }//end namespace tool
 

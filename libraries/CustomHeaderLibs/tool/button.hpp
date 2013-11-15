@@ -14,6 +14,8 @@
 #include "clock.hpp"
 
 #include <Arduino.h>
+#include "../ustd/type_traits.hpp"
+#include "pin_concept.hpp"
 
 namespace state {
     enum button_enum : uint8_t {
@@ -24,28 +26,35 @@ namespace state {
         , changed = (falling | raising)
         , auto_falling = 16
     };
-    uint8_t const auto_repeat = 33;
-    uint16_t const auto_delay = 500;
+    uint8_t const auto_rate = 30; //auto_falling per second
+    uint16_t const auto_delay = 500; //in millis
 }//end namespace state
 
 namespace tool {
-    template<uint8_t pin, bool pressed_state = HIGH, uint16_t _auto_repeat = state::auto_repeat, uint16_t _auto_delay = state::auto_delay>
+    template<typename pin_concept, bool pressed_state = HIGH, uint16_t _auto_rate = state::auto_rate, uint16_t _auto_delay = state::auto_delay>
     class button_class {
         typedef uint8_t state_type;
     public:
         //------------------- ctors -------------------
         button_class(): start_(0), state_(state::released), old_read_(!pressed_state) {
             if(pressed_state)
-                pinMode(pin, INPUT);
+                pin_.mode(INPUT);
             else
-                pinMode(pin, INPUT_PULLUP);
+                pin_.mode(INPUT_PULLUP);
+        }
+        template<typename T>
+        button_class(T & t): start_(0), state_(state::released), old_read_(!pressed_state), pin_(t) {
+            if(pressed_state)
+                pin_.mode(INPUT);
+            else
+                pin_.mode(INPUT_PULLUP);
         }
         operator bool() const {
             return state_ == state::pressed;
         }
-        //------------------- update -------------------
-        void update() {
-            
+    private:
+        //------------------- update implementation -------------------
+        void update_impl(bool const & read) {
             if(state_ & (state::falling | state::auto_falling)) {
                 state_ = state::pressed;
                 return;
@@ -55,13 +64,12 @@ namespace tool {
                 return;
             }
             if(state_ & state::pressed) {
-                if((tool::clock.micros() - start_press_) > _auto_repeat * 1000.0) {
+                if((tool::clock.micros() - start_press_) > (1000000.0 / _auto_rate)) {
                     start_press_ = tool::clock.micros();
                     state_ = (state::auto_falling + state::pressed);
                 }
             }
             
-            bool read = digitalRead(pin);
             if(read != old_read_) {
                 if(start_ == 0)
                     start_ = tool::clock.micros();
@@ -74,6 +82,16 @@ namespace tool {
             }
             else
                 start_ = 0;
+        }
+    public:
+        //------------------- update -------------------
+        template<typename T = void>
+        typename ustd::enable_if<!ustd::is_same<pin_concept, fake>::value, T>::type update() {
+            update_impl(pin_.read());
+        }
+        template<typename T = void>
+        typename ustd::enable_if<ustd::is_same<pin_concept, fake>::value, T>::type update(bool const & read) {
+            update_impl(read);
         }
         //------------------- getter -------------------
         state_type state() const {
@@ -88,6 +106,8 @@ namespace tool {
         double start_press_;
         state_type state_;
         bool old_read_;
+        
+        pin_concept pin_;
     };
     
 }//end namespace tool

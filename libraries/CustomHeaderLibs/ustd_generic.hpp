@@ -24,6 +24,7 @@
 #include "ustd/filter.hpp"
 //~ #include "ustd/bitset.hpp"
 #include "ustd/ard_assert.hpp"
+#include "ustd/shared_ptr.hpp"
 #include "ustd/type_traits.hpp"
 #include "ustd/fast_bitset.hpp"
 #include "ustd/accumulator.hpp"

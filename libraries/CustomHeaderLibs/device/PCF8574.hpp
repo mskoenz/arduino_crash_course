@@ -12,15 +12,15 @@
 #define __PCF8574_HEADER
 
 #include "../com/i2c.hpp"
-
+#include "../util/byte_operation.hpp"
 
 namespace device {
     class PCF8574_class {
     public:
-        PCF8574_class(): dev_ard_(0x20) { //the addres is 0x50 + (A2 << 2 | A1 << 1 | A0)
+        PCF8574_class(uint8_t const & adr = 0x20): dev_ard_(adr), input_mask_(0) { //the addres is 0x20 + (A2 << 2 | A1 << 1 | A0)
         }
         void write(uint8_t const & data) { //if a write happens put input bits high
-            com::i2cout(dev_ard_) << data << ustd::endl;
+            com::i2cout(dev_ard_) << uint8_t(data | input_mask_) << ustd::endl;
         }
         //use low to drive high (25mA per port) currents. Continuouse high works with 300uA per port...
         uint8_t read() const {
@@ -28,8 +28,47 @@ namespace device {
             com::i2cin(dev_ard_) >> res;
             return res;
         }
+        uint8_t & mask() {
+            return input_mask_;
+        }
     private:
         uint8_t dev_ard_;
+        uint8_t input_mask_;
     };
 }//end namespace device
+
+namespace tool {
+    template<uint8_t pin>
+    class PCF8574 {
+    public:
+        PCF8574(device::PCF8574_class & ioexp): ioexp_(&ioexp), pm_set_(false) {
+        }
+        void mode(uint8_t const & pm) {
+            pm_set_ = false; //since i2c isn't online yet...
+            if(pm == INPUT_PULLUP or pm == INPUT) {
+                util::set_bit(ioexp_->mask(), pin);
+            }
+            else
+                util::clear_bit(ioexp_->mask(), pin);
+        }
+        void write(bool const & state) {
+            uint8_t read = ioexp_->read();
+            util::write_bit(read, pin, state);
+            ioexp_->write(read);
+        }
+        bool read() {
+            if(pm_set_ == false) { //not nice, but the only way...
+                pm_set_ = true;
+                ioexp_->write(ioexp_->mask());
+            }
+            uint8_t read = ioexp_->read();
+            return util::read_bit(read, pin);
+        }
+    private:
+        device::PCF8574_class * ioexp_;
+        bool pm_set_;
+    };
+    
+}//end namespace 
+
 #endif //__PCF8574_HEADER

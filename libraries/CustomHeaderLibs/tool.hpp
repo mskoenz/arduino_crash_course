@@ -13,10 +13,9 @@
 
 #include "tool/light.hpp"
 #include "tool/button.hpp"
-#include "tool/depreller.hpp"
-#include "tool/fake_button.hpp"
 #include "tool/analog.hpp"
 #include "tool/out_pin.hpp"
 #include "tool/ring_buffer.hpp"
+#include "tool/light_wrapper.hpp"
 
 #endif //__TOOL_HEADER
