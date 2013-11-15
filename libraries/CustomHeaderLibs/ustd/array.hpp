@@ -82,9 +82,32 @@ namespace ustd {
         //------------------- size/capacity -------------------
         /**\brief retuns the size (equal to N)
          */
-        size_type size() const {
+        constexpr size_type size() {
             return N;
         }
+        //------------------- iterator -------------------
+        //~ struct iterator {
+            //~ iterator(array & arr, size_type const & pos): arr_(arr), pos_(pos) {
+            //~ }
+            //~ iterator & operator++() {
+                //~ ++pos_;
+                //~ return (*this);
+            //~ }
+            //~ bool operator!=(iterator const & rhs) const {
+                //~ return pos_ != rhs.pos_;
+            //~ }
+            //~ value_type & operator*() {
+                //~ return arr_[pos_];
+            //~ }
+            //~ array & arr_;
+            //~ size_type pos_;
+        //~ };
+        //~ iterator begin() {
+            //~ return iterator((*this), 0);
+        //~ }
+        //~ iterator end() {
+            //~ return iterator((*this), N);
+        //~ }
         //------------------- print & serialize-------------------
         /**\brief print to any stream-concept
          * \tparam stream-concept

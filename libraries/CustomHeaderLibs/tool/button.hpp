@@ -22,11 +22,11 @@ namespace state {
           released = 1
         , pressed = 2
         , falling = 4
-        , raising = 8
-        , changed = (falling | raising)
-        , auto_falling = 16
+        , rising = 8
+        , changing = (falling | rising)
+        , auto_repeat = 16
     };
-    uint8_t const auto_rate = 30; //auto_falling per second
+    uint8_t const auto_rate = 30; //auto_repeat per second
     uint16_t const auto_delay = 500; //in millis
 }//end namespace state
 
@@ -55,18 +55,18 @@ namespace tool {
     private:
         //------------------- update implementation -------------------
         void update_impl(bool const & read) {
-            if(state_ & (state::falling | state::auto_falling)) {
+            if(state_ & (state::falling | state::auto_repeat)) {
                 state_ = state::pressed;
                 return;
             }
-            if(state_ & state::raising) {
+            if(state_ & state::rising) {
                 state_ = state::released;
                 return;
             }
             if(state_ & state::pressed) {
                 if((tool::clock.micros() - start_press_) > (1000000.0 / _auto_rate)) {
                     start_press_ = tool::clock.micros();
-                    state_ = (state::auto_falling + state::pressed);
+                    state_ = (state::auto_repeat + state::pressed);
                 }
             }
             
@@ -75,8 +75,8 @@ namespace tool {
                     start_ = tool::clock.micros();
                 else
                     if(tool::clock.micros() - start_ > 2000u) {
-                        state_ <<= 2; //brings pressed -> raising and released -> falling
-                        start_press_ = tool::clock.micros() + _auto_delay * 1000.0;
+                        state_ <<= 2; //brings pressed -> rising and released -> falling
+                        start_press_ = tool::clock.micros() + _auto_delay * 1000.0 - (1000000.0 / _auto_rate);
                         old_read_ = read;
                     }
             }

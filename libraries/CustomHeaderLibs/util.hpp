@@ -12,6 +12,7 @@
 #define __UTIL_HEADER
 
 #include <util/reset.hpp>
+#include <util/sleep.hpp>
 #include <util/checksum.hpp>
 #include <util/byte_operation.hpp>
 

@@ -90,7 +90,7 @@ public:
     }
 private:
     uint8_t count_;
-    tool::button_class<2, LOW> btn_;
+    tool::button_class<D2, LOW> btn_;
     ustd::vector<uint8_t> vec_;
 };
 

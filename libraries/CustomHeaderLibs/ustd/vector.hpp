@@ -64,13 +64,13 @@ namespace ustd {
                 if(array_[pos] == val)
                     return pos;
             }
-            return end();
+            return size_;
         }
         void clear() {
             size_ = 0;
         }
         void erase(size_type const & pos) {
-            if(pos < end()) {
+            if(pos < size_) {
                 for(size_type i = pos; i < size_; ++i) {
                     array_[i] = array_[i + 1];
                 }
@@ -135,12 +135,29 @@ namespace ustd {
         bool empty() const {
             return (size_ == size_type());
         }
-        size_type const & begin() const {
-            return 0;
-        }
-        size_type const & end() const {
-            return size_;
-        }
+        //------------------- iterator -------------------
+        //~ struct iterator {
+            //~ iterator(vector & vec, size_type const & pos): vec_(vec), pos_(pos) {
+            //~ }
+            //~ iterator & operator++() {
+                //~ ++pos_;
+                //~ return (*this);
+            //~ }
+            //~ bool operator!=(iterator const & rhs) const {
+                //~ return pos_ != rhs.pos_;
+            //~ }
+            //~ value_type & operator*() {
+                //~ return vec_[pos_];
+            //~ }
+            //~ vector & vec_;
+            //~ size_type pos_;
+        //~ };
+        //~ iterator begin() {
+            //~ return iterator((*this), 0);
+        //~ }
+        //~ iterator end() {
+            //~ return iterator((*this), size_);
+        //~ }
         //------------------- print & serialize-------------------
         template<typename S>
         void print(S & os) const {

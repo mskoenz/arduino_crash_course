@@ -23,8 +23,6 @@ namespace state {
           off
         , on
         , flash
-        //~ , raise
-        //~ , pwm
         , slow
         , blink
         , fast

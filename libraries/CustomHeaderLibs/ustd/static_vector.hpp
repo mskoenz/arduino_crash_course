@@ -51,16 +51,13 @@ namespace ustd {
                 if(array_[pos] == val)
                     return pos;
             }
-            return end();
+            return size_;
         }
         void clear() {
-            //~ for(size_type i = 0; i < size_; ++i) {
-                //~ array_[i] = 0;
-            //~ }
             size_ = 0;
         }
         void erase(size_type const & pos) {
-            if(pos < end()) {
+            if(pos < size_) {
                 for(size_type i = pos; i < size_; ++i) {
                     array_[i] = array_[i + 1];
                 }
@@ -125,7 +122,7 @@ namespace ustd {
             ASSERT(new_size <= capacity_);
             size_ = new_size;
         }
-        size_type  capacity() const {
+        constexpr size_type capacity() {
             return capacity_;
         }
         void resize(size_type const & new_size, T const & val = T()) {
@@ -142,16 +139,39 @@ namespace ustd {
         bool empty() const {
             return (size_ == size_type());
         }
-        size_type const & begin() const {
-            return 0;
-        }
-        size_type const & end() const {
-            return size_;
-        }
+        //------------------- iterator -------------------
+        //~ struct iterator {
+            //~ iterator(static_vector & svec, size_type const & pos): svec_(svec), pos_(pos) {
+            //~ }
+            //~ iterator & operator++() {
+                //~ ++pos_;
+                //~ return (*this);
+            //~ }
+            //~ bool operator!=(iterator const & rhs) const {
+                //~ return pos_ != rhs.pos_;
+            //~ }
+            //~ value_type & operator*() {
+                //~ return svec_[pos_];
+            //~ }
+            //~ static_vector & svec_;
+            //~ size_type pos_;
+        //~ };
+        //~ iterator begin() {
+            //~ return iterator((*this), 0);
+        //~ }
+        //~ iterator end() {
+            //~ return iterator((*this), size_);
+        //~ }
         //------------------- print & serialize-------------------
         template<typename S>
         void print(S & os) const {
-            os << array_;
+            os << F("[");
+            for(size_type i = 0; i < size_; ++i) {
+                os << array_[i];
+                if(i != size_ - 1)
+                    os << F(", ");
+            }
+            os << F("]");
         }
         template<typename Archive>
         void serialize(Archive & ar) {

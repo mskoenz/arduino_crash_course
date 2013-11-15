@@ -44,6 +44,24 @@ namespace tool {
     private:
         
     };
+    
+
 }//end namespace tool
+
+//------------------- some abbreviations -------------------
+typedef tool::intern<0> D0;
+typedef tool::intern<1> D1;
+typedef tool::intern<2> D2;
+typedef tool::intern<3> D3;
+typedef tool::intern<4> D4;
+typedef tool::intern<5> D5;
+typedef tool::intern<6> D6;
+typedef tool::intern<7> D7;
+typedef tool::intern<8> D8;
+typedef tool::intern<9> D9;
+typedef tool::intern<10> D10;
+typedef tool::intern<11> D11;
+typedef tool::intern<12> D12;
+typedef tool::intern<13> D13;
 
 #endif //__PIN_CONCEPT_HEADER
