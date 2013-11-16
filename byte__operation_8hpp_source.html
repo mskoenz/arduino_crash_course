@@ -103,21 +103,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __BYTE_OPERATION_HEADER</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="namespaceutil.html">   15</a></span>&#160;<span class="keyword">namespace </span>util {</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="namespaceutil_1_1detail.html">   16</a></span>&#160;    <span class="keyword">namespace </span>detail {</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="namespaceutil_1_1detail.html#a68fcbeefb6af09bee6fdba78e34e0ace">   17</a></span>&#160;        <span class="keyword">typedef</span> uint8_t <a class="code" href="namespaceutil_1_1detail.html#a68fcbeefb6af09bee6fdba78e34e0ace">byte_op_size_type</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">namespace </span>detail {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">typedef</span> uint8_t byte_op_size_type;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="namespaceutil.html#a91db890f60607d94d0238012351d7fae">   20</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceutil.html#a91db890f60607d94d0238012351d7fae">clear_byte</a>(T &amp; t, <a class="code" href="namespaceutil_1_1detail.html#a68fcbeefb6af09bee6fdba78e34e0ace">detail::byte_op_size_type</a> <span class="keyword">const</span> &amp; pos) {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="namespaceutil.html#a91db890f60607d94d0238012351d7fae">   20</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceutil.html#a91db890f60607d94d0238012351d7fae">clear_byte</a>(T &amp; t, detail::byte_op_size_type <span class="keyword">const</span> &amp; pos) {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        uint8_t * <a class="code" href="hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a83878c91171338902e0fe0fb97a8c47a">p</a> = (uint8_t *) &amp; t;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        p[pos] = 0;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="namespaceutil.html#af68acd5471baac2b0971cbbe708ba21a">   25</a></span>&#160;    <span class="keyword">inline</span> uint8_t <a class="code" href="namespaceutil.html#af68acd5471baac2b0971cbbe708ba21a">read_byte</a>(T <span class="keyword">const</span> &amp; t, <a class="code" href="namespaceutil_1_1detail.html#a68fcbeefb6af09bee6fdba78e34e0ace">detail::byte_op_size_type</a> <span class="keyword">const</span> &amp; pos) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="namespaceutil.html#af68acd5471baac2b0971cbbe708ba21a">   25</a></span>&#160;    <span class="keyword">inline</span> uint8_t <a class="code" href="namespaceutil.html#af68acd5471baac2b0971cbbe708ba21a">read_byte</a>(T <span class="keyword">const</span> &amp; t, detail::byte_op_size_type <span class="keyword">const</span> &amp; pos) {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        uint8_t * <a class="code" href="hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a83878c91171338902e0fe0fb97a8c47a">p</a> = (uint8_t *) &amp; t;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> p[pos];</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="namespaceutil.html#a9dde951a9f1fd6bef252688dcca48ff4">   30</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceutil.html#a9dde951a9f1fd6bef252688dcca48ff4">write_byte</a>(T &amp; t, <a class="code" href="namespaceutil_1_1detail.html#a68fcbeefb6af09bee6fdba78e34e0ace">detail::byte_op_size_type</a> <span class="keyword">const</span> &amp; pos, uint8_t <span class="keyword">const</span> &amp; in) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="namespaceutil.html#a9dde951a9f1fd6bef252688dcca48ff4">   30</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespaceutil.html#a9dde951a9f1fd6bef252688dcca48ff4">write_byte</a>(T &amp; t, detail::byte_op_size_type <span class="keyword">const</span> &amp; pos, uint8_t <span class="keyword">const</span> &amp; in) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        uint8_t * <a class="code" href="hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a83878c91171338902e0fe0fb97a8c47a">p</a> = (uint8_t *) &amp; t;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        p[pos] = in;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 16 2013 02:52:20 for Arduino Libraries by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 16 2013 03:25:33 for Arduino Libraries by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

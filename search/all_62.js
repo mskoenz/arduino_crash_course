@@ -19,15 +19,14 @@ var searchData=
   ['blueb',['BLUEB',['../std__support_2color_8hpp.html#ab02ac594d4a35f08bbe36a07c2b4be26',1,'BLUEB():&#160;color.hpp'],['../ustd_2color_8hpp.html#ab02ac594d4a35f08bbe36a07c2b4be26',1,'BLUEB():&#160;color.hpp']]],
   ['bluebg',['BLUEBG',['../std__support_2color_8hpp.html#a34ee2fb00f7a65ddb0bc7911d0cd4a3b',1,'BLUEBG():&#160;color.hpp'],['../ustd_2color_8hpp.html#a34ee2fb00f7a65ddb0bc7911d0cd4a3b',1,'BLUEBG():&#160;color.hpp']]],
   ['bluesmirf_5fhid_2ehpp',['bluesmirf_hid.hpp',['../bluesmirf__hid_8hpp.html',1,'']]],
-  ['bluesmirf_5fhid_5fclass',['bluesmirf_hid_class',['../classdevice_1_1bluesmirf__hid__class.html#a755f2a5e82aecd0d09a3e774e69cb9cd',1,'device::bluesmirf_hid_class']]],
   ['bluesmirf_5fhid_5fclass',['bluesmirf_hid_class',['../classdevice_1_1bluesmirf__hid__class.html',1,'device']]],
+  ['bluesmirf_5fhid_5fclass',['bluesmirf_hid_class',['../classdevice_1_1bluesmirf__hid__class.html#a755f2a5e82aecd0d09a3e774e69cb9cd',1,'device::bluesmirf_hid_class']]],
   ['break_5fconnection',['break_connection',['../classdevice_1_1bluesmirf__hid__class.html#a105bd8292e88def18196a312e645d87e',1,'device::bluesmirf_hid_class']]],
   ['buffer_5fsize',['buffer_size',['../classdevice_1_1usb__hid__class.html#a05a1a198fb845b1c84d5f695275ddda4',1,'device::usb_hid_class']]],
   ['build_5ffct',['BUILD_FCT',['../iomanip_8hpp.html#a5f7c4a72d2a5ac664f0520f0678f0abe',1,'iomanip.hpp']]],
   ['button_2ehpp',['button.hpp',['../button_8hpp.html',1,'']]],
-  ['button_5fclass',['button_class',['../classtool_1_1button__class.html',1,'tool']]],
   ['button_5fclass',['button_class',['../classtool_1_1button__class.html#a2db01d8b35d859d8051cae99f47b59f4',1,'tool::button_class::button_class()'],['../classtool_1_1button__class.html#adfdddce298258a633f41dce094f2956c',1,'tool::button_class::button_class(T &amp;t)']]],
+  ['button_5fclass',['button_class',['../classtool_1_1button__class.html',1,'tool']]],
   ['button_5fenum',['button_enum',['../namespacestate.html#a7427e1961a9984d4f654b7d07609f222',1,'state']]],
-  ['byte_5fop_5fsize_5ftype',['byte_op_size_type',['../namespaceutil_1_1detail.html#a68fcbeefb6af09bee6fdba78e34e0ace',1,'util::detail']]],
   ['byte_5foperation_2ehpp',['byte_operation.hpp',['../byte__operation_8hpp.html',1,'']]]
 ];

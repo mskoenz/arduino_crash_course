@@ -20,7 +20,6 @@ var searchData=
   ['debug_5fvar',['DEBUG_VAR',['../ard__assert_8hpp.html#a23bbecf2f76856ec2c58ba1191d0c902',1,'ard_assert.hpp']]],
   ['del',['del',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691ad2bcc286168bf8e040885c5cb7b6df13',1,'hid_keys.hpp']]],
   ['delay_5fms',['delay_ms',['../classdevice_1_1usb__hid__class.html#a4dc659ea39597258d2949525459be2c3',1,'device::usb_hid_class']]],
-  ['detail',['detail',['../namespacedetail.html',1,'']]],
   ['device',['device',['../namespacedevice.html',1,'']]],
   ['diag',['diag',['../namespacediag.html',1,'']]],
   ['diag_2ehpp',['diag.hpp',['../diag_8hpp.html',1,'']]],
@@ -29,11 +28,7 @@ var searchData=
   ['digitalwrite',['digitalWrite',['../fast__io_8hpp.html#a00de1a4bbc3338eb603c292fd77f109c',1,'fast_io.hpp']]],
   ['disable_5fif',['disable_if',['../structustd_1_1disable__if.html',1,'ustd']]],
   ['disable_5fif_3c_20false_2c_20t_20_3e',['disable_if&lt; false, T &gt;',['../structustd_1_1disable__if_3_01false_00_01T_01_4.html',1,'ustd']]],
-  ['do_5fnothing',['do_nothing',['../namespaceustd_1_1detail.html#ae782f900edd27aca840f4df42c91c1a8',1,'ustd::detail']]],
   ['dollar',['dollar',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a33c381af2d1e41fe40556f1663244b34',1,'hid_keys.hpp']]],
   ['dot',['dot',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a69eb76c88557a8211cbfc9beda5fc062',1,'hid_keys.hpp']]],
-  ['down',['down',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a74e8333ad11685ff3bdae589c8f6e34d',1,'hid_keys.hpp']]],
-  ['dr',['dr',['../structdetail_1_1dr.html',1,'detail']]],
-  ['dummy_5fstruct',['dummy_struct',['../structustd_1_1detail_1_1dummy__struct.html',1,'ustd::detail']]],
-  ['dw',['dw',['../structdetail_1_1dw.html',1,'detail']]]
+  ['down',['down',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a74e8333ad11685ff3bdae589c8f6e34d',1,'hid_keys.hpp']]]
 ];

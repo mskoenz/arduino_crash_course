@@ -9,7 +9,5 @@ var searchData=
   ['unordered_5fmap',['unordered_map',['../classustd_1_1unordered__map.html',1,'ustd']]],
   ['unordered_5fmap_3c_20adress_5ftype_2c_20adress_5ftype_20_3e',['unordered_map&lt; adress_type, adress_type &gt;',['../classustd_1_1unordered__map.html',1,'ustd']]],
   ['unordered_5fmap_3c_20adress_5ftype_2c_20ustd_3a_3apair_3c_20adress_5ftype_2c_20version_5ftype_20_3e_20_3e',['unordered_map&lt; adress_type, ustd::pair&lt; adress_type, version_type &gt; &gt;',['../classustd_1_1unordered__map.html',1,'ustd']]],
-  ['usb_5fhid_5fclass',['usb_hid_class',['../classdevice_1_1usb__hid__class.html',1,'device']]],
-  ['use_5fdouble_5fidentifier',['use_double_identifier',['../structutil_1_1detail_1_1use__double__identifier.html',1,'util::detail']]],
-  ['use_5fdouble_5fidentifier_3c_20double_20_3e',['use_double_identifier&lt; double &gt;',['../structutil_1_1detail_1_1use__double__identifier_3_01double_01_4.html',1,'util::detail']]]
+  ['usb_5fhid_5fclass',['usb_hid_class',['../classdevice_1_1usb__hid__class.html',1,'device']]]
 ];

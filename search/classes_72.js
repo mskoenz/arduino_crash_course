@@ -15,12 +15,5 @@ var searchData=
   ['remove_5fvoid_3c_20list_5fitem_3c_20void_2c_20next_5flist_5fitem_20_3e_20_3e',['remove_void&lt; list_item&lt; void, next_list_item &gt; &gt;',['../structutil_1_1remove__void_3_01list__item_3_01void_00_01next__list__item_01_4_01_4.html',1,'util']]],
   ['remove_5fvolatile',['remove_volatile',['../structustd_1_1remove__volatile.html',1,'ustd']]],
   ['remove_5fvolatile_3c_20t_20volatile_20_3e',['remove_volatile&lt; T volatile &gt;',['../structustd_1_1remove__volatile_3_01T_01volatile_01_4.html',1,'ustd']]],
-  ['requirement',['requirement',['../structustd_1_1detail_1_1requirement.html',1,'ustd::detail']]],
-  ['requirement_3c_20tag_3a_3acount_20_3e',['requirement&lt; tag::count &gt;',['../structustd_1_1detail_1_1requirement_3_01tag_1_1count_01_4.html',1,'ustd::detail']]],
-  ['requirement_3c_20tag_3a_3aema_3c_20n_20_3e_20_3e',['requirement&lt; tag::ema&lt; N &gt; &gt;',['../structustd_1_1detail_1_1requirement_3_01tag_1_1ema_3_01N_01_4_01_4.html',1,'ustd::detail']]],
-  ['requirement_3c_20tag_3a_3aerror_20_3e',['requirement&lt; tag::error &gt;',['../structustd_1_1detail_1_1requirement_3_01tag_1_1error_01_4.html',1,'ustd::detail']]],
-  ['requirement_3c_20tag_3a_3amax_20_3e',['requirement&lt; tag::max &gt;',['../structustd_1_1detail_1_1requirement_3_01tag_1_1max_01_4.html',1,'ustd::detail']]],
-  ['requirement_3c_20tag_3a_3amean_20_3e',['requirement&lt; tag::mean &gt;',['../structustd_1_1detail_1_1requirement_3_01tag_1_1mean_01_4.html',1,'ustd::detail']]],
-  ['requirement_3c_20tag_3a_3amin_20_3e',['requirement&lt; tag::min &gt;',['../structustd_1_1detail_1_1requirement_3_01tag_1_1min_01_4.html',1,'ustd::detail']]],
   ['ring_5fbuffer',['ring_buffer',['../classtool_1_1ring__buffer.html',1,'tool']]]
 ];

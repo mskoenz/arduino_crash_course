@@ -106,19 +106,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>util {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">namespace </span>detail {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="structutil_1_1detail_1_1use__double__identifier.html">   19</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structutil_1_1detail_1_1use__double__identifier.html">use_double_identifier</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#a29bad4d999fdc61e10e52d9f748afdcb">   20</a></span>&#160;            <span class="keyword">static</span> T <a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#a29bad4d999fdc61e10e52d9f748afdcb">t</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">struct </span>use_double_identifier {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keyword">static</span> T <a class="code" href="hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691ae358efa489f58062f10dd7316b65649e">t</a>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#af3aa36ba224cf7639c8c8671c051cb65">check</a>(T);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#af3aa36ba224cf7639c8c8671c051cb65">check</a>(<span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">char</span> check(T);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">static</span> <span class="keywordtype">double</span> check(<span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#a85d9ba2ccca0239fa6ee9a172692d49da9214dbc6b2ccf1f3065c027b10e5e59a">   25</a></span>&#160;            <span class="keyword">enum</span> {<a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#a85d9ba2ccca0239fa6ee9a172692d49da9214dbc6b2ccf1f3065c027b10e5e59a">value</a> = (<span class="keyword">sizeof</span>(<a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#af3aa36ba224cf7639c8c8671c051cb65">check</a>((<a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#a29bad4d999fdc61e10e52d9f748afdcb">t</a>+<a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#a29bad4d999fdc61e10e52d9f748afdcb">t</a>)/<span class="keywordtype">double</span>(2))) == <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>))};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">enum</span> {value = (<span class="keyword">sizeof</span>(check((t+t)/<span class="keywordtype">double</span>(2))) == <span class="keyword">sizeof</span>(<span class="keywordtype">double</span>))};</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        };</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">//------------------- full specialisation -------------------</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="structutil_1_1detail_1_1use__double__identifier_3_01double_01_4.html">   30</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structutil_1_1detail_1_1use__double__identifier.html">use_double_identifier</a>&lt;double&gt; {</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="structutil_1_1detail_1_1use__double__identifier_3_01double_01_4.html#a7d43ce885dc872671c24e8e9651130ebac5b98bd357244fe884ba23cb00209f6c">   31</a></span>&#160;            <span class="keyword">enum</span> {<a class="code" href="structutil_1_1detail_1_1use__double__identifier.html#a85d9ba2ccca0239fa6ee9a172692d49da9214dbc6b2ccf1f3065c027b10e5e59a">value</a> = <span class="keyword">true</span>}; <span class="comment">//doesn&#39;t matter if true or false</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">struct </span>use_double_identifier&lt;double&gt; {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">enum</span> {value = <span class="keyword">true</span>}; <span class="comment">//doesn&#39;t matter if true or false</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        };</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }<span class="comment">//end namespace detail</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 16 2013 02:52:20 for Arduino Libraries by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 16 2013 03:25:33 for Arduino Libraries by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>
