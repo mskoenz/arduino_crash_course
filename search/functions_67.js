@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['get',['get',['../structcom_1_1impl__version.html#af6b421a9ab502406f182470e53a0a21c',1,'com::impl_version::get()'],['../structcom_1_1impl__version_3_01T_00_01Archive_00_01archive__enum_1_1output_00_01false_01_4.html#a82fee51d3c6cb6ada727ade38d6541e5',1,'com::impl_version&lt; T, Archive, archive_enum::output, false &gt;::get()'],['../structcom_1_1impl__version_3_01T_00_01Archive_00_01archive__enum_1_1input_00_01false_01_4.html#aefa6ab3ef85c54c21a4f9863e8a82b7e',1,'com::impl_version&lt; T, Archive, archive_enum::input, false &gt;::get()'],['../structcom_1_1serialize__helper.html#ab8d4d3628515e2d124dd338f287197cd',1,'com::serialize_helper::get()'],['../structcom_1_1serialize__helper_3_01T_00_01false_00_01Archive_01_4.html#ae83c3b32c2bab98c43d2a93019ce0fcb',1,'com::serialize_helper&lt; T, false, Archive &gt;::get()']]]
+];
