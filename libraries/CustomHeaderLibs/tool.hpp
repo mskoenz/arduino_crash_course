@@ -13,6 +13,7 @@
 
 #include "tool/light.hpp"
 #include "tool/button.hpp"
+#include "tool/melody.hpp"
 #include "tool/analog.hpp"
 #include "tool/out_pin.hpp"
 #include "tool/ring_buffer.hpp"

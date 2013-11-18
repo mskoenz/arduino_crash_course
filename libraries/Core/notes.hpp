@@ -13,7 +13,8 @@
 
 namespace note {
     enum note_enum {
-          c1  = 33
+          pause = 0
+        , c1  = 33
         , cs1 = 35
         , d1  = 37
         , ds1 = 39

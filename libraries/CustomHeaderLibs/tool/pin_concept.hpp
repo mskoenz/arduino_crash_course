@@ -26,6 +26,15 @@ namespace tool {
         bool read() {
             return digitalRead(pin);
         }
+        void tone(uint16_t const & note, uint16_t const & dur) {
+            ::tone(pin, note, dur);
+        }
+        void tone(uint16_t const & note) {
+            ::tone(pin, note);
+        }
+        void no_tone() {
+            ::noTone(pin);
+        }
     private:
         
     };

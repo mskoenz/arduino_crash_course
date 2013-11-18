@@ -170,8 +170,10 @@ namespace ustd {
                     read();
                 }
             
-            while(1) {
+            while(true) {
                 if(chr == key_enter or chr == key_space) {
+                    if(chr == key_enter)
+                        ustd::cout << ustd::endl;
                     break;
                 }
                 if(chr >= '0' and chr <= '9') {

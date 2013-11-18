@@ -14,5 +14,6 @@
 #include <ustd/color.hpp>
 #include <ustd/iostream.hpp>
 #include <ustd_generic.hpp>
+#include <ustd/initializer_list.hpp> //has to be in std namespace, prevent double definition, since include guards differ
 
 #endif //__USTD_HEADER
