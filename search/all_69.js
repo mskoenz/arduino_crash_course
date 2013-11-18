@@ -4,8 +4,8 @@ var searchData=
   ['i2c_2ehpp',['i2c.hpp',['../i2c_8hpp.html',1,'']]],
   ['i2c_5fbegin',['i2c_begin',['../namespacecom.html#a4422d4bafb2d336cf14f949236148b34',1,'com::i2c_begin()'],['../namespacecom.html#af104e39fc087f47b9ebd572458a0b1ef',1,'com::i2c_begin(int const &amp;adr, void(*rec)(int)=receiveEvent, void(*req)(void)=requestEvent)']]],
   ['i2cin',['i2cin',['../namespacecom.html#af1744c050430cbc8695b9dde35a69ee1',1,'com']]],
-  ['i2cin_5fclass',['i2cin_class',['../classcom_1_1i2cin__class.html',1,'com']]],
   ['i2cin_5fclass',['i2cin_class',['../classcom_1_1i2cin__class.html#a0f51b11c13f664e76e20a0546c16a35a',1,'com::i2cin_class']]],
+  ['i2cin_5fclass',['i2cin_class',['../classcom_1_1i2cin__class.html',1,'com']]],
   ['i2cout',['i2cout',['../namespacecom.html#a6c03830f1dcef75c6bcc3e5089b3ada0',1,'com']]],
   ['i2cout_5fclass',['i2cout_class',['../classcom_1_1i2cout__class.html',1,'com']]],
   ['i2cout_5fclass',['i2cout_class',['../classcom_1_1i2cout__class.html#a3b43d83c36e6a1443b12181696da06d8',1,'com::i2cout_class']]],
@@ -18,6 +18,9 @@ var searchData=
   ['impl_5fversion_3c_20t_2c_20archive_2c_20archive_5fenum_3a_3aoutput_2c_20false_20_3e',['impl_version&lt; T, Archive, archive_enum::output, false &gt;',['../structcom_1_1impl__version_3_01T_00_01Archive_00_01archive__enum_1_1output_00_01false_01_4.html',1,'com']]],
   ['init',['init',['../classdevice_1_1bluesmirf__hid__class.html#ab4aa7b633bf267fb40714b0ab3f9940d',1,'device::bluesmirf_hid_class::init()'],['../classdevice_1_1MMA8452__class.html#a7e2bc6c9d4cebc000db823e59bb85092',1,'device::MMA8452_class::init()'],['../classserial__class.html#aa7a4adba372e58bcf80294ee02f43e48',1,'serial_class::init()'],['../classustd_1_1cout__class.html#afc4814cf3e41554981c4a2c3e0347abe',1,'ustd::cout_class::init()']]],
   ['init_5fvmv',['init_vmv',['../classcom_1_1EEPROMV2__class.html#af4e08b51c08e86b5f7b774c526d7cabd',1,'com::EEPROMV2_class']]],
+  ['initializer_5flist',['initializer_list',['../classstd_1_1initializer__list.html',1,'std']]],
+  ['initializer_5flist',['initializer_list',['../classstd_1_1initializer__list.html#af42724c7a53d1294c499389197b6a20e',1,'std::initializer_list']]],
+  ['initializer_5flist_2ehpp',['initializer_list.hpp',['../initializer__list_8hpp.html',1,'']]],
   ['input',['input',['../archive__enum_8hpp.html#aeac0fbbb8396bede69706b1c4740617baa43c1b0aa53a0c908810c06ab1ff3967',1,'archive_enum.hpp']]],
   ['insert',['insert',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691ae0df5f3dfd2650ae5be9993434e2b2c0',1,'hid_keys.hpp']]],
   ['integral_5fconstant',['integral_constant',['../structustd_1_1integral__constant.html',1,'ustd']]],
@@ -40,9 +43,10 @@ var searchData=
   ['is_5fsame',['is_same',['../structustd_1_1is__same.html',1,'ustd']]],
   ['is_5fsame_3c_20t_2c_20t_20_3e',['is_same&lt; T, T &gt;',['../structustd_1_1is__same_3_01T_00_01T_01_4.html',1,'ustd']]],
   ['is_5funsigned',['is_unsigned',['../structustd_1_1is__unsigned.html',1,'ustd']]],
-  ['iss_5fclass',['iss_class',['../classcom_1_1iss__class.html#a4f32a5ecd007b81a597aeafb8f6a3abb',1,'com::iss_class']]],
   ['iss_5fclass',['iss_class',['../classcom_1_1iss__class.html',1,'com']]],
+  ['iss_5fclass',['iss_class',['../classcom_1_1iss__class.html#a4f32a5ecd007b81a597aeafb8f6a3abb',1,'com::iss_class']]],
   ['iss_5fclass_3c_20eeprom_5fconcept_2c_20eeprom_5fsize_20_3e',['iss_class&lt; EEPROM_concept, EEPROM_size &gt;',['../classcom_1_1iss__class.html',1,'com']]],
+  ['isw_5fclass',['isw_class',['../classcom_1_1isw__class.html',1,'com']]],
   ['isw_5fclass',['isw_class',['../classcom_1_1isw__class.html#a027a8ff7c41118afa903f33364e5b38a',1,'com::isw_class']]],
-  ['isw_5fclass',['isw_class',['../classcom_1_1isw__class.html',1,'com']]]
+  ['iterator',['iterator',['../classstd_1_1initializer__list.html#a9ea4453a3ae7128135984dd4b83a501f',1,'std::initializer_list']]]
 ];

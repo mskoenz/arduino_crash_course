@@ -104,6 +104,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a822f883cbe35bffd2075e8fbff3cbbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f9b1ad3fcbefa42c00a92f017d7a5f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtool_1_1intern.html#a7f9b1ad3fcbefa42c00a92f017d7a5f9">read</a> ()</td></tr>
 <tr class="separator:a7f9b1ad3fcbefa42c00a92f017d7a5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c76f969ab6c869aac4af18f3828c12c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtool_1_1intern.html#a6c76f969ab6c869aac4af18f3828c12c">tone</a> (uint16_t const &amp;note, uint16_t const &amp;dur)</td></tr>
+<tr class="separator:a6c76f969ab6c869aac4af18f3828c12c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1000399f9255db1b5c10dd1666f0f45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtool_1_1intern.html#ab1000399f9255db1b5c10dd1666f0f45">tone</a> (uint16_t const &amp;note)</td></tr>
+<tr class="separator:ab1000399f9255db1b5c10dd1666f0f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ef0805fdc1f7678cd547316078100a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtool_1_1intern.html#a36ef0805fdc1f7678cd547316078100a">no_tone</a> ()</td></tr>
+<tr class="separator:a36ef0805fdc1f7678cd547316078100a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="af0bd077b01572cf1662dc23aa4caa80e"></a>
@@ -132,6 +138,31 @@ template&lt;uint8_t pin&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a36ef0805fdc1f7678cd547316078100a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t pin&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtool_1_1intern.html">tool::intern</a>&lt; pin &gt;::no_tone </td>
+          <td>(</td>
+          <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a7f9b1ad3fcbefa42c00a92f017d7a5f9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -145,6 +176,68 @@ template&lt;uint8_t pin&gt; </div>
           <td class="memname">bool <a class="el" href="classtool_1_1intern.html">tool::intern</a>&lt; pin &gt;::read </td>
           <td>(</td>
           <td class="paramname">)</td><td></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6c76f969ab6c869aac4af18f3828c12c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t pin&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtool_1_1intern.html">tool::intern</a>&lt; pin &gt;::tone </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t const &amp;&#160;</td>
+          <td class="paramname"><em>note</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t const &amp;&#160;</td>
+          <td class="paramname"><em>dur</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ab1000399f9255db1b5c10dd1666f0f45"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;uint8_t pin&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtool_1_1intern.html">tool::intern</a>&lt; pin &gt;::tone </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t const &amp;&#160;</td>
+          <td class="paramname"><em>note</em>)</td><td></td>
           <td></td>
         </tr>
       </table>
@@ -189,7 +282,7 @@ template&lt;uint8_t pin&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 16 2013 03:25:33 for Arduino Libraries by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 19 2013 00:48:06 for Arduino Libraries by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

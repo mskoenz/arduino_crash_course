@@ -7,6 +7,7 @@ var searchData=
   ['impl_5fversion',['impl_version',['../structcom_1_1impl__version.html',1,'com']]],
   ['impl_5fversion_3c_20t_2c_20archive_2c_20archive_5fenum_3a_3ainput_2c_20false_20_3e',['impl_version&lt; T, Archive, archive_enum::input, false &gt;',['../structcom_1_1impl__version_3_01T_00_01Archive_00_01archive__enum_1_1input_00_01false_01_4.html',1,'com']]],
   ['impl_5fversion_3c_20t_2c_20archive_2c_20archive_5fenum_3a_3aoutput_2c_20false_20_3e',['impl_version&lt; T, Archive, archive_enum::output, false &gt;',['../structcom_1_1impl__version_3_01T_00_01Archive_00_01archive__enum_1_1output_00_01false_01_4.html',1,'com']]],
+  ['initializer_5flist',['initializer_list',['../classstd_1_1initializer__list.html',1,'std']]],
   ['integral_5fconstant',['integral_constant',['../structustd_1_1integral__constant.html',1,'ustd']]],
   ['intern',['intern',['../classtool_1_1intern.html',1,'tool']]],
   ['invert_5flist',['invert_list',['../structutil_1_1invert__list.html',1,'util']]],

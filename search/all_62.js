@@ -3,6 +3,7 @@ var searchData=
   ['b',['b',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a92eb5ffee6ae2fec3ad71c777531578f',1,'hid_keys.hpp']]],
   ['back',['back',['../classtool_1_1ring__buffer.html#a4f845a3b672af075d4313d8149286b9e',1,'tool::ring_buffer::back()'],['../classtool_1_1ring__buffer.html#a785ffa8f84d3fe08893929a9a67d1245',1,'tool::ring_buffer::back() const '],['../classustd_1_1static__vector.html#a4d6d6abfcce81a5e8ed9bd4bec43b5fc',1,'ustd::static_vector::back()'],['../classustd_1_1static__vector.html#aa380b1c96d402f705f3a70733cef2f9b',1,'ustd::static_vector::back() const '],['../classustd_1_1vector.html#a462be3634874f6e17fa7cd870b01f86c',1,'ustd::vector::back()'],['../classustd_1_1vector.html#a2007e30e1c009657fe723d051f2c53d9',1,'ustd::vector::back() const ']]],
   ['backspace',['backspace',['../hid__keys_8hpp.html#a183be5bfde8b5ebdaa386fd2e43f2691a5528770f4bce9c9b0ce9bbb8645aef45',1,'hid_keys.hpp']]],
+  ['begin',['begin',['../classstd_1_1initializer__list.html#ae821db6138f19ce5bb64ca7971e7ad02',1,'std::initializer_list::begin()'],['../namespacestd.html#a549ebac15bcc03ae83f87b89796d89fc',1,'std::begin()']]],
   ['benchmark_5fclocks',['benchmark_clocks',['../namespacediag.html#a5b0349f29f0e4e65f4b15e66d831eaa8',1,'diag']]],
   ['benchmark_5fmicros',['benchmark_micros',['../namespacediag.html#ad7f23750d13ece59d8270c8f06c185ff',1,'diag']]],
   ['benchmark_5freport',['benchmark_report',['../namespacediag.html#a3ad507dadcf1b66ac4b3603d9e5b8591',1,'diag']]],

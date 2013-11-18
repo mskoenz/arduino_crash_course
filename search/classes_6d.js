@@ -5,6 +5,7 @@ var searchData=
   ['mcp4561_5fclass',['MCP4561_class',['../classdevice_1_1MCP4561__class.html',1,'device']]],
   ['mean',['mean',['../structustd_1_1tag_1_1mean.html',1,'ustd::tag']]],
   ['mean_5ftrait',['mean_trait',['../structutil_1_1mean__trait.html',1,'util']]],
+  ['melody_5fclass',['melody_class',['../classtool_1_1melody__class.html',1,'tool']]],
   ['min',['min',['../structustd_1_1tag_1_1min.html',1,'ustd::tag']]],
   ['mma8452_5fclass',['MMA8452_class',['../classdevice_1_1MMA8452__class.html',1,'device']]],
   ['module',['module',['../classustd_1_1module.html',1,'ustd']]],
