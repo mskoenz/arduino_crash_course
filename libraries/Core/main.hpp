@@ -21,7 +21,6 @@ void requestEvent() {
 int main(void)
 {
     init();
-    
 #if defined(USBCON)
     USBDevice.attach();
 #endif

@@ -26,6 +26,7 @@ namespace ustd {
     //------------------- ctor -------------------
         explicit shared_ptr(T * ptr = NULL): ptr_(ptr) {
             count_ = new uint8_t(0);
+            ASSERT(count_ != NULL)
             incr();
         }
         shared_ptr(shared_ptr const & rhs): ptr_(rhs.ptr_), count_(rhs.count_) {

@@ -17,7 +17,7 @@
 namespace device {
     class PCF8574_class {
     public:
-        PCF8574_class(uint8_t const & adr = 0x20): dev_ard_(adr), input_mask_(0) { //the addres is 0x20 + (A2 << 2 | A1 << 1 | A0)
+        PCF8574_class(uint8_t const & add): dev_ard_(0x20 + add), input_mask_(0) { //the addres is 0x20 + (A2 << 2 | A1 << 1 | A0)
         }
         void write(uint8_t const & data) { //if a write happens put input bits high
             com::i2cout(dev_ard_) << uint8_t(data | input_mask_) << ustd::endl;

@@ -56,6 +56,7 @@ namespace tool{
         }
     //------------------- supported operations -------------------
         light_wrapper_class & operator=(state::light_enum const & in) {
+            ASSERT(ptr_ != NULL)
             ptr_->operator=(in);
             return (*this);
         }

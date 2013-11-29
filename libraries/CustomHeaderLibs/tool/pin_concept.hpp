@@ -72,5 +72,11 @@ typedef tool::intern<10> D10;
 typedef tool::intern<11> D11;
 typedef tool::intern<12> D12;
 typedef tool::intern<13> D13;
+typedef tool::intern<A0> DA0;
+typedef tool::intern<A1> DA1;
+typedef tool::intern<A2> DA2;
+typedef tool::intern<A3> DA3;
+typedef tool::intern<A4> DA4;
+typedef tool::intern<A5> DA5;
 
 #endif //__PIN_CONCEPT_HEADER
