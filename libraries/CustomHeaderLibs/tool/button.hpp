@@ -66,7 +66,7 @@ namespace tool {
             if(state_ & state::pressed) {
                 if((tool::clock.micros() - start_press_) > (1000000.0 / _auto_rate)) {
                     start_press_ = tool::clock.micros();
-                    state_ = (state::auto_repeat + state::pressed);
+                    state_ = (state::auto_repeat | state::pressed);
                 }
             }
             

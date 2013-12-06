@@ -14,7 +14,6 @@
 #include "ard_assert.hpp"
 
 #include "../com/archive_enum.hpp"
-#include <diag.hpp>
 
 namespace ustd {
     
@@ -158,6 +157,12 @@ namespace ustd {
         //~ iterator end() {
             //~ return iterator((*this), size_);
         //~ }
+        constexpr size_type begin() const {
+            return 0;
+        }
+        size_type const & end() const {
+            return size();
+        }
         //------------------- print & serialize-------------------
         template<typename S>
         void print(S & os) const {

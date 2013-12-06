@@ -33,7 +33,7 @@ namespace device {
         }
     private:
         uint8_t dev_ard_;
-        uint8_t input_mask_;
+        uint8_t input_mask_; //the imputs should always be written HIGH
     };
 }//end namespace device
 

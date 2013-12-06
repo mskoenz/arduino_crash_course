@@ -22,10 +22,11 @@ namespace com {
         }
         template<typename T>
         i2cout_class & operator<<(T const & t) {
-            return (*this) & t;
+            T t2(t); //TODO: super ugly, remove asap
+            return (*this) & t2;
         }
         template<typename T>
-        i2cout_class & operator&(T const & t) {
+        i2cout_class & operator&(T & t) {
             serialize(*this, t);
             return (*this);
         }
@@ -75,7 +76,7 @@ namespace com {
                     while(Wire.available() != sizeof(T)) DEBUG_MSG("FAIL: To earley");
                 #endif //__TYPE_SIZE_CHECK
             }
-            return (*this) & t;
+            return ((*this) & t);
         }
         template<typename T>
         i2cin_class & operator&(T & t) {
