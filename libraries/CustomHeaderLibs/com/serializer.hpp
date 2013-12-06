@@ -93,7 +93,6 @@ namespace com {
 
     template<typename T, typename Archive>
     void serialize(Archive & ar, T & t) {
-        //~ ustd::cout << util::has_serialize<T>::value << ustd::endl;
         serialize_helper<T, util::has_serialize<T>::value, Archive>().get(ar, t);
     }
     //------------------- endian helper for of class -------------------
@@ -143,7 +142,6 @@ namespace com {
             }
         }
         void write(uint8_t const & in) {
-            //~ ustd::cout << in << " ";
             ASSERT_MSG(pos_ < max_buf, "buffer_size to small in oss_class::operator<<")
             data.write(pos_, in);
             ++(pos_);

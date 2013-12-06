@@ -71,13 +71,11 @@ namespace com {
         
         template<typename T>
         uart_class_template & operator<<(T const & t) {
-            //~ DEBUG_MSG("uart out")
             osw_ & t;
             return (*this);
         }
         template<typename T>
         uart_class_template & operator>>(T & t) {
-            //~ DEBUG_MSG("uart in")
             isw_ & t;
             return (*this);
         }

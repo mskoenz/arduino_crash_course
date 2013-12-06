@@ -14,7 +14,7 @@
 #include <device/PCF8574.hpp>
 #include <util/sleep.hpp>
 
-//~ #include <mario.hpp>
+#include <mario.hpp>
 //~ #include <dominik.hpp>
 //~ #include <rico.hpp>
 //~ #include <donjan.hpp>
@@ -103,8 +103,8 @@ public:
             
             
             if(game.win() == ttt::unknown) { //only let ai play if game is not over yet
-                noise(note::c6, 100);
                 game.ai_move();
+                noise(note::c6, 100);
                 for(uint8_t i = 0; i < 9; ++i) { //go through all fileds and turn on ai-lights
                     if(game[i] == ttt::ai)
                         led_.set(2*i, state::on);
