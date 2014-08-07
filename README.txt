@@ -21,6 +21,8 @@ Linux:
 08: goto program/empty_template
 09: now call make with an arduino attached and everything should work
 
+10: in order not to open ports with sudo all the time, add yourself to the dialout group: "sudo adduser username dialout" and check if it worked "groups username"
+
 Mac:
 
 01: clone/fork this repo
@@ -38,6 +40,6 @@ Mac:
 11: if the Arduino serial port isn't something like /dev/tty.usbmodem*
     11.5: change the file mac_only.sh by changing the line NEW_PORT="/dev/tty.usbmodem*" to the right port
 12: run ./mac_only.sh
-
+    
 13: goto program/empty_template
 14: now call make with an arduino attached and everything should work
