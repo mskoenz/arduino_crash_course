@@ -9,6 +9,7 @@ PORT ?= /dev/ttyACM*
 ARDUINO_DIR = /home/msk/ArduinoMin
 ARDUINO_LIBS = $(ARDUINO_DIR)/libraries
 ARDUINO_CORE = $(ARDUINO_LIBS)/Core
+ARDUINO_F_CPU_OLD = $(ARDUINO_DIR)/makefile/F_CPU.txt
 AVR_TOOLS_PATH = /usr/bin
 BUILD_DIR = build
 
@@ -61,7 +62,6 @@ else
 		endif
 	endif
 endif
-
 
 #---------------------------tools---------------------------------------
 CC = 		$(AVR_TOOLS_PATH)/avr-gcc
@@ -144,7 +144,11 @@ $(BUILD_DIR)/core.a: $(OBJ) $(MAKEFILE)
 	test -d $(BUILD_DIR)/ || mkdir $(BUILD_DIR)
 	@for i in $(OBJ); do echo $(AR) rcs $(BUILD_DIR)/core.a $$i; $(AR) rcs $(BUILD_DIR)/core.a $$i; done
 
-upload: $(BUILD_DIR)/$(TARGET).hex $(MAKEFILE)
+touch_makefile:
+	#~ touch ./ + $(MAKEFILE)
+	
+
+upload: touch_makefile $(BUILD_DIR)/$(TARGET).hex $(MAKEFILE)
 	#~ make -f $(MAKEFILE) kill
 	$(AVRDUDE) $(AVRDUDE_FLAGS) $(AVRDUDE_WRITE_FLASH)
 	make -f $(MAKEFILE) run
@@ -154,4 +158,4 @@ clean:
 	rm -rf $(BUILD_DIR)
 	$(REMOVE) $(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d) $(CXXSRC:.cpp=.s) $(CXXSRC:.cpp=.d)
 
-.PHONY:	all build elf hex clean run
+.PHONY:	all build elf hex clean run touch_makefile

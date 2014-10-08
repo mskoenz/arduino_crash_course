@@ -21,6 +21,10 @@ namespace com {
         i2cout_class(): target_(255) {
         }
         template<typename T>
+        i2cout_class & operator<<(T & t) {
+            return (*this) & t;
+        }
+        template<typename T>
         i2cout_class & operator<<(T const & t) {
             T t2(t); //TODO: super ugly, remove asap
             return (*this) & t2;

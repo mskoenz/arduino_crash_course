@@ -23,7 +23,7 @@ namespace com {
         osw_class(D & data): data(data) {
         }
         template<typename T>
-        osw_class & operator&(T const & t) {
+        osw_class & operator&(T & t) {
             serialize(*this, t);
             return (*this);
         }
@@ -70,7 +70,7 @@ namespace com {
         }
         
         template<typename T>
-        uart_class_template & operator<<(T const & t) {
+        uart_class_template & operator<<(T & t) {
             osw_ & t;
             return (*this);
         }

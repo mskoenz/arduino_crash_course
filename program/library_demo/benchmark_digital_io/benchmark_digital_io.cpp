@@ -6,7 +6,7 @@
 #define COLOR_ON
 
 //include this header as first one to speed up digital io
-//~ #include <util/fast_io.hpp> 
+#include <util/fast_io.hpp> 
 
 #include <Arduino.h>
 #include <ustd.hpp>

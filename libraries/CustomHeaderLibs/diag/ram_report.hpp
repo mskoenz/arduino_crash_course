@@ -34,31 +34,51 @@ namespace diag {
         
         int16_t freeptr = __flp;
         int16_t pos = int16_t(&__heap_start);
-        int16_t end = int16_t(__brkval);
+        int16_t const end = int16_t(__brkval);
         
-        ustd::cout << GREEN << "used heap: " << GREENB << end - pos << ustd::endl(2);
-        
+        ustd::cout << GREEN << "used heap: " << GREENB << end - pos << NONE << ustd::endl;
+        ustd::cout << YELLOW << "free list " << RED << "size bytes " << MAGENTA << "pointer " << NONE << "used space" << ustd::endl;
         uint16_t size = 0;
+        uint8_t pointer_print = 0;
+        auto color = NONE;
         ustd::cout << ustd::setfill('0');
         for(; pos < end; ++pos) {
             if(size == 0) {
                 if(pos == freeptr) {
-                    ustd::cout << YELLOW;
+                    color = YELLOW;
+                    pointer_print = 2;
+                    ustd::cout << color;
                     freeptr = *(uint8_t*)(pos + 2) + (*(uint8_t*)(pos + 3) << 8);
-                } else
-                    ustd::cout << NONE;
+                } else {
+                    color = NONE;
+                    ustd::cout << color;
+                }
+                
                 
                 size = *(uint8_t*)pos + (*(uint8_t*)(pos + 1) << 8);
-                ustd::cout << "size: " << ustd::setw(3) << size << "  ";
+
+                ustd::cout << MAGENTAB << ustd::setw(3) <<  pos << color << "/";
+                ustd::cout << REDB << ustd::setw(3) << size << color << ":  ";
+                ustd::cout.flush();
+                ustd::cout << RED <<ustd::setw(3) << *(uint8_t*)pos << " ";
+                ustd::cout << ustd::setw(3) << *(uint8_t*)(pos + 1) << color << " ";
+                
                 pos += 2;
             }
+            if(pointer_print != 0){
+                ustd::cout << MAGENTA;
+                --pointer_print;
+            }
+            else
+                ustd::cout << color;
+                
             ustd::cout << ustd::setw(3) << *(uint8_t*)pos << " ";
             
             size--;
             if(size == 0)
                 ustd::cout << ustd::endl;
         }
-        ustd::cout << ustd::endl(2);
+        ustd::cout(1) << ustd::endl;
     }
     int used_ram() {
         return ram_capacity() - free_ram();

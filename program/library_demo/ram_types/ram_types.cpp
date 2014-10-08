@@ -39,7 +39,7 @@ public:
     
     void setup() {
         ustd::cout.init();
-        ustd::cout << F("start del.cpp") << ustd::endl;
+        ustd::cout << F("start ram_demo.cpp") << ustd::endl;
         
         //~ data_demo();
         //~ bss_demo();

@@ -24,7 +24,7 @@ namespace ustd {
     template<typename T, typename _base>
     class module<T, tag::min, _base>: public _base {
         typedef _base base;
-        T const init_min = 1023;
+        T const init_min = T(1023);
     public:
         //------------------- ctor -------------------
         module(): base(), min_(init_min) { //just heuristics for now

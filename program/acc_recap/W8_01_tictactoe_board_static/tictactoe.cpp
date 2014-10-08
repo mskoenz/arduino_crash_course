@@ -121,6 +121,7 @@ public:
         }
         if(game.win() != ttt::unknown) { //game is over
             music_[game.win()].play_blocking(); //victory theme
+            digitalWrite(piezo, piezo_down);
             game.reset();
             
             for(uint8_t i = 0; i < 18; ++i) { //turn off entire board
