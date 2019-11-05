@@ -1,2 +1,0 @@
-/home/msk/ArduinoMin/program/03_actual_progs/glove_preparation/logic_build/lib/CMakeFiles/logic.dir
-/home/msk/ArduinoMin/program/03_actual_progs/glove_preparation/logic_build/examples/CMakeFiles/test_logic.dir

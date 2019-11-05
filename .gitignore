@@ -1,2 +1,4 @@
 build
+gui_build
+logic_build
 *.o
