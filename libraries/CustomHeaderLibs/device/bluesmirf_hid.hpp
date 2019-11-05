@@ -58,7 +58,7 @@ namespace device {
         }
 
         void break_connection() {
-            ustd::cout << char(0) << ustd::endl;
+            serial_.print(char(0));
             delay(400);
         }
 
@@ -66,9 +66,9 @@ namespace device {
             break_connection();
             reset();
             cmd_mode();
-            ustd::cout << F("S~,0") << ustd::endl;
+            serial_.print(F("S~,0"));
             delay(100);
-            ustd::cout << F("SE,S") << ustd::endl;
+            serial_.print(F("SE,S"));
             delay(200);
         }
 
@@ -76,10 +76,10 @@ namespace device {
             break_connection();
             reset();
             cmd_mode();
-            ustd::cout << F("S~,6") << ustd::endl;
+            serial_.print(F("S~,6"));
             delay(100);
             
-            ustd::cout << F("SE,C") << ustd::endl;
+            serial_.print(F("SE,C"));
             delay(200);
             connect(); //only connect when HID
         }
@@ -186,14 +186,11 @@ namespace device {
             serial_.write(data_, 6);
         }
     private:
-        
         SoftwareSerial serial_;
         
         uint8_t data_[6]; //first two byte are reserved, third is the mod and the last three the keys
         ustd::array<uint8_t, 4> mod_vec_;
     };
-    
-    
 }//end namespace device
 
 #endif //__BLUESMIRF_HID_HEADER

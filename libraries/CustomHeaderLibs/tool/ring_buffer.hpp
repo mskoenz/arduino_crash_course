@@ -23,7 +23,7 @@ namespace tool {
         //------------------- ctors -------------------
         ring_buffer(): count_(0) {
             for(size_type i = 0; i < N; ++i) {
-                array_[i] = 0;
+                array_[i] = T();
             }
         }
         ring_buffer(ring_buffer const & arg): count_(arg.count_), array_(arg.array_) {
@@ -72,7 +72,7 @@ namespace tool {
         }
         //------------------- info -------------------
         count_type const & count() const {
-            return count;
+            return count_;
         }
         //------------------- print & serialize-------------------
         template<typename S>

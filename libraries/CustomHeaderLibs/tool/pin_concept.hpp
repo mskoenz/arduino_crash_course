@@ -35,10 +35,13 @@ namespace tool {
         void no_tone() {
             ::noTone(pin);
         }
+        constexpr static uint8_t physical_pin() {
+            return pin;
+        }
     private:
-        
+
     };
-    
+
     class fake {
     public:
         void mode(uint8_t const & pm) {
@@ -51,9 +54,9 @@ namespace tool {
             return false;
         }
     private:
-        
+
     };
-    
+
 
 }//end namespace tool
 

@@ -1,0 +1,10 @@
+#---------------------------name----------------------------------------
+TARGET = glove_master
+
+ARDLIBS = Wire
+
+MODEL = ATMega16MHz
+
+PORT = /dev/ttyACM0
+
+include /home/msk/ArduinoMin/makefile/Master_Makefile.mk

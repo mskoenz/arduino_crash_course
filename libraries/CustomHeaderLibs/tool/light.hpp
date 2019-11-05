@@ -20,15 +20,42 @@
 
 namespace state {
     enum light_enum : uint8_t {
-          off
-        , on
-        , flash
-        , slow
-        , blink
-        , fast
-        , very_fast
+
+          default_mark = 0<<6
+        , off = 0
+        , on = 1
+        , flash = 2
+        , slow = 3
+        , blink = 4
+        , fast = 5
+        , very_fast = 6
+
+        , red_mark = 1<<6
+        , red_on = red_mark | state::on
+        , red_flash = red_mark | state::flash
+        , red_slow = red_mark | state::slow
+        , red_blink = red_mark | state::blink
+        , red_fast = red_mark | state::fast
+        , red_very_fast = red_mark | state::very_fast
+
+        , green_mark = 2<<6
+        , green_on = green_mark | state::on
+        , green_flash = green_mark | state::flash
+        , green_slow = green_mark | state::slow
+        , green_blink = green_mark | state::blink
+        , green_fast = green_mark | state::fast
+        , green_very_fast = green_mark | state::very_fast
+
+        , blue_mark = 3<<6
+        , blue_on = blue_mark | state::on
+        , blue_flash = blue_mark | state::flash
+        , blue_slow = blue_mark | state::slow
+        , blue_blink = blue_mark | state::blink
+        , blue_fast = blue_mark | state::fast
+        , blue_very_fast = blue_mark | state::very_fast
     };
 }//end namespace state
+
 
 namespace tool {
     template<typename pin_concept, bool on_state = HIGH>
@@ -81,7 +108,7 @@ namespace tool {
         //------------------- update -------------------
         void update() {
             #define UPDATE(STATE) if(state_ == state::STATE) STATE(); else
-            
+
             UPDATE(on)
             UPDATE(off)
             UPDATE(flash)
@@ -90,8 +117,11 @@ namespace tool {
             UPDATE(slow)
             UPDATE(very_fast)
             ; //last else
-            
+
             #undef UPDATE
+        }
+        void sleep() {
+            pin_.write(!on_state);
         }
         //------------------- getter -------------------
         state::light_enum const & state() const {
@@ -107,6 +137,47 @@ namespace tool {
     private:
         state::light_enum state_;
         pin_concept pin_;
+    };
+
+    template<typename pin_concept_red, typename pin_concept_green, typename pin_concept_blue, bool on_state = HIGH>
+    class rgb_light_class {
+    public:
+        rgb_light_class(): red_(), green_(), blue_() {
+        }
+        rgb_light_class & operator=(state::light_enum const & s) {
+            uint8_t col = s & (3<<6);
+            uint8_t last_col = state_ & (3<<6);
+            state_ = s;
+
+            set_led(last_col, state::off);
+            set_led(col, state::light_enum(state_ & (~(3<<6))));
+
+            return (*this);
+        }
+        void update() {
+            red_.update();
+            green_.update();
+            blue_.update();
+        }
+        void sleep() {
+            red_.sleep();
+            green_.sleep();
+            blue_.sleep();
+        }
+    private:
+        void set_led(uint8_t const & col, state::light_enum state) {
+            if(col == state::red_mark or col == state::default_mark) {
+                red_ = state;
+            } else if(col == state::green_mark) {
+                green_ = state;
+            } else if(col ==  state::blue_mark) {
+                blue_ = state;
+            }
+        }
+        state::light_enum state_;
+        light_class<pin_concept_red, on_state> red_;
+        light_class<pin_concept_green, on_state> green_;
+        light_class<pin_concept_blue, on_state> blue_;
     };
 }//end namespace tool
 

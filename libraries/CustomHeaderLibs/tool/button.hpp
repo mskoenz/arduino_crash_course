@@ -15,6 +15,7 @@
 
 #include <Arduino.h>
 #include "../ustd/type_traits.hpp"
+#include <util/sleep.hpp>
 #include "pin_concept.hpp"
 
 namespace state {
@@ -69,7 +70,7 @@ namespace tool {
                     state_ = (state::auto_repeat | state::pressed);
                 }
             }
-            
+
             if(read != old_read_) {
                 if(start_ == 0)
                     start_ = tool::clock.micros();
@@ -93,6 +94,15 @@ namespace tool {
         typename ustd::enable_if<ustd::is_same<pin_concept, fake>::value, T>::type update(bool const & read) {
             update_impl(read);
         }
+
+        template<typename T = void>
+        typename ustd::enable_if<ustd::is_same<pin_concept, D2>::value, T>::type sleep() {
+            util::sleep(0, pressed_state);
+        }
+        template<typename T = void>
+        typename ustd::enable_if<ustd::is_same<pin_concept, D3>::value, T>::type sleep() {
+            util::sleep(1, pressed_state);
+        }
         //------------------- getter -------------------
         state_type state() const {
             return state_;
@@ -106,10 +116,10 @@ namespace tool {
         double start_press_;
         state_type state_;
         bool old_read_;
-        
+
         pin_concept pin_;
     };
-    
+
 }//end namespace tool
 
 #endif //__BUTTON_HEADER

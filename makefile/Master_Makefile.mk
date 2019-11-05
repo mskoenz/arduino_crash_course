@@ -6,11 +6,11 @@ ALLLIBS = $(ARDLIBS) $(CUSTOM_LIB_REQ)
 BAUD ?= 460800
 #---------------------------path----------------------------------------
 PORT ?= /dev/ttyACM*
-ARDUINO_DIR = /home/msk/ArduinoMin
+ARDUINO_DIR = /Users/mskoenz/programming/hobby/arduino/ArduinoMin
 ARDUINO_LIBS = $(ARDUINO_DIR)/libraries
 ARDUINO_CORE = $(ARDUINO_LIBS)/Core
 ARDUINO_F_CPU_OLD = $(ARDUINO_DIR)/makefile/F_CPU.txt
-AVR_TOOLS_PATH = /usr/bin
+AVR_TOOLS_PATH = /usr/local/CrossPack-AVR/bin
 BUILD_DIR = build
 
 MAKEFILE ?= $(firstword $(MAKEFILE_LIST))
@@ -83,7 +83,7 @@ AVRDUDE_FLAGS = -F -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER) -b $(UP
 CSTANDARD = -std=gnu99
 CXXSTANDARD = -std=c++0x
 
-OPT ?= 3 
+OPT ?= 3
 
 DEBUG = stabs
 
@@ -146,7 +146,7 @@ $(BUILD_DIR)/core.a: $(OBJ) $(MAKEFILE)
 
 touch_makefile:
 	#~ touch ./ + $(MAKEFILE)
-	
+
 
 upload: touch_makefile $(BUILD_DIR)/$(TARGET).hex $(MAKEFILE)
 	#~ make -f $(MAKEFILE) kill

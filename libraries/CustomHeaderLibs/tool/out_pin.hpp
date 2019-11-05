@@ -12,13 +12,14 @@
 #define __OUT_PIN_HEADER
 
 #include <Arduino.h>
+#include "./pin_concept.hpp"
 
 namespace tool {
-    template<uint8_t pin>
-    class out_pin_class {
+    template<typename pin_concept>
+    class out_pin_class_base {
     public:
         //------------------- ctors -------------------
-        out_pin_class(): state_(LOW) {
+        out_pin_class_base(): state_(LOW) {
             pinMode(pin, OUTPUT);
             digitalWrite(pin, state_);
         }
@@ -27,7 +28,7 @@ namespace tool {
             return state_;
         }
         //------------------- assignment -------------------
-        out_pin_class & operator=(bool const & s) {
+        out_pin_class_base & operator=(bool const & s) {
             state_ = s;
             digitalWrite(pin, state_);
             return (*this);
@@ -47,7 +48,19 @@ namespace tool {
         }
     private:
         bool state_;
+        constexpr static uint8_t pin = pin_concept::physical_pin();
     };
+
+
+
+    template<typename pin_concept>
+    class out_pin_class: public out_pin_class_base<pin_concept> {
+    };
+
+    template<uint8_t pin>
+    class out_pin_class<tool::intern<pin>>: public out_pin_class_base<tool::intern<pin>> {
+    };
+
 }//end namespace tool
 
 #endif //__OUT_PIN_HEADER

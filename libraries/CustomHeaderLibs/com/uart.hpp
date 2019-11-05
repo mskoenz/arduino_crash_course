@@ -70,7 +70,7 @@ namespace com {
         }
         
         template<typename T>
-        uart_class_template & operator<<(T & t) {
+        uart_class_template & operator<<(T && t) {
             osw_ & t;
             return (*this);
         }

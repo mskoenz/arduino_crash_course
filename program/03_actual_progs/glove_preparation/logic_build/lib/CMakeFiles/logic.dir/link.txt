@@ -1,0 +1,2 @@
+/usr/bin/ar cr liblogic.a  CMakeFiles/logic.dir/logic.cpp.o
+/usr/bin/ranlib liblogic.a

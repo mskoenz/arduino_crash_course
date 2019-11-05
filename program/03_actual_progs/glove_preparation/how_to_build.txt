@@ -1,0 +1,17 @@
+mkdir build
+cd build
+qmake -project ../src
+qmake
+make
+
+
+Add/Sub in .pro-file
+
+TEMPLATE = app
+TARGET = 
+DEPENDPATH += . ../gui_src ../logic_build/lib
+INCLUDEPATH += . ../gui_src ../logic_src/src /home/msk/ArduinoMin/libraries/CustomHeaderLibs
+QMAKE_LIBDIR += ../logic_build/lib
+LIBS += -llogic
+
+QMAKE_CXXFLAGS = -std=c++0x

@@ -18,15 +18,15 @@ namespace tool {
         }
         void set_melody(std::initializer_list<note::note_enum> const & notes, std::initializer_list<uint8_t> const & dur) {
             ASSERT(notes.size() == dur.size())
-            
+
             notes_.clear();
             dur_.clear();
-            
+
             for(auto n : notes)
                 notes_.push_back(n);
             for(auto d : dur)
                 dur_.push_back(d);
-                
+
             current_note_ = notes.size() + 1;
         }
         void set_unit_dur(uint16_t const & unit_dur) {
@@ -48,11 +48,16 @@ namespace tool {
         void play() {
             if(notes_.size() == 0)
                 return;
-                
+
             current_note_ = 0;
-            
+
             t_start_ = tool::clock.millis();
             pin_.tone(notes_[current_note_], dur_[current_note_] * unit_dur_ - cutoff_);
+        }
+        void stop() {
+            current_note_ = notes_.size()+1;
+            t_start_ = 0;
+            pin_.no_tone();
         }
         void update() {
             if(current_note_ > notes_.size())
@@ -60,11 +65,13 @@ namespace tool {
             if(current_note_ == notes_.size()) {
                 if(rep_)
                     play();
-                else
+                else {    
                     ++current_note_;
+                    pin_.no_tone();
+                }
                 return;
             }
-            
+
             if(tool::clock.millis() - t_start_ >= dur_[current_note_] * unit_dur_) {
                 ++current_note_;
                 if(current_note_ == notes_.size())
@@ -78,13 +85,13 @@ namespace tool {
         double t_start_;
         uint8_t current_note_;
         bool rep_;
-        
+
         ustd::vector<uint16_t> notes_;
         ustd::vector<uint8_t> dur_;
         uint16_t unit_dur_;
         uint16_t cutoff_;
     };
-    
+
 }//end namespace tool
 
 #endif //__MELODY_HEADER

@@ -30,7 +30,7 @@ public:
         
         delay(500);
         
-        sing_a_song();
+        //~ sing_a_song();
     }
     void loop() {
         
