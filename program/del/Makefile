@@ -10,8 +10,8 @@ ARDLIBS = Wire SoftwareSerial Servo
 
 MODEL = ATMega16MHz
 PORT ?= /dev/tty.usbmodem1442301
-BAUD = 460800
+BAUD = 230400
 
-OPT = s
+OPT = 3
 
 include /Users/mskoenz/programming/hobby/arduino/ArduinoMin/makefile/Master_Makefile.mk

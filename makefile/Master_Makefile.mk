@@ -10,7 +10,7 @@ ARDUINO_DIR = /Users/mskoenz/programming/hobby/arduino/ArduinoMin
 ARDUINO_LIBS = $(ARDUINO_DIR)/libraries
 ARDUINO_CORE = $(ARDUINO_LIBS)/Core
 ARDUINO_F_CPU_OLD = $(ARDUINO_DIR)/makefile/F_CPU.txt
-AVR_TOOLS_PATH = /usr/local/CrossPack-AVR/bin
+AVR_TOOLS_PATH = /usr/local/bin
 BUILD_DIR = build
 
 MAKEFILE ?= $(firstword $(MAKEFILE_LIST))
