@@ -1,7 +1,7 @@
 #---------------------------name----------------------------------------
 TARGET := $(shell ls | grep *.cpp | sed 's/.\{4\}$$//')
 
-ARDLIBS = Wire SoftwareSerial Servo
+ARDLIBS = Wire SoftwareSerial Servo MemoryFree ArduinoSTL
 
 #~ MODEL = ATMega20MHz
 #~ PORT ?= /dev/ttyUSB*
@@ -9,7 +9,7 @@ ARDLIBS = Wire SoftwareSerial Servo
 
 
 MODEL = ATMega16MHz
-PORT ?= /dev/tty.usbmodem1442301
+PORT ?= /dev/tty.usb*
 BAUD = 230400
 
 OPT = 3
